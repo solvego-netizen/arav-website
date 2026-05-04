@@ -106,10 +106,15 @@ nav a:hover {
 }
 
 .hero {
-  padding:115px 80px;
-  background:
-    radial-gradient(circle at top right, rgba(122,0,0,0.10), transparent 35%),
-    linear-gradient(120deg,#fff,var(--cream));
+  padding:95px 80px;
+  background:linear-gradient(120deg,#fff,var(--cream));
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:45px;
+  align-items:center;
 }
 
 .hero-label {
@@ -124,16 +129,27 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size:60px;
-  line-height:1.04;
-  max-width:1050px;
+  font-size:56px;
+  line-height:1.05;
+  max-width:950px;
   margin:0 0 25px;
 }
 
 .hero p {
-  font-size:23px;
+  font-size:22px;
   color:#444;
-  max-width:800px;
+  max-width:760px;
+}
+
+.hero-image {
+  min-height:390px;
+  border-radius:28px;
+  background:
+    linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)),
+    url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 15px 45px rgba(0,0,0,0.18);
 }
 
 .btn {
@@ -170,7 +186,7 @@ nav a:hover {
 }
 
 section {
-  padding:95px 80px;
+  padding:90px 80px;
 }
 
 h2 {
@@ -188,7 +204,18 @@ h2 {
   background:#fafafa;
   border:1px solid #eee;
   border-radius:20px;
-  padding:34px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,0.04);
+}
+
+.product-img {
+  height:170px;
+  background-size:cover;
+  background-position:center;
+}
+
+.product-content {
+  padding:28px;
 }
 
 .product h3 {
@@ -196,8 +223,30 @@ h2 {
   font-size:25px;
 }
 
-.quality {
+.why {
   background:#f9f9f9;
+}
+
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.why-box {
+  background:white;
+  padding:32px;
+  border-radius:20px;
+  border:1px solid #eee;
+  box-shadow:0 8px 25px rgba(0,0,0,0.04);
+}
+
+.why-box h3 {
+  color:var(--red);
+}
+
+.quality {
+  background:white;
 }
 
 .quality-grid {
@@ -207,7 +256,7 @@ h2 {
 }
 
 .quality-box {
-  background:white;
+  background:#fafafa;
   border:1px solid #eee;
   border-radius:20px;
   padding:34px;
@@ -318,14 +367,16 @@ footer {
     padding:60px 24px;
   }
 
-  .hero h1 {
-    font-size:38px;
-  }
-
+  .hero-grid,
   .product-list,
   .quality-grid,
+  .why-grid,
   .form-grid {
     grid-template-columns:1fr;
+  }
+
+  .hero h1 {
+    font-size:38px;
   }
 
   .form-group.full {
@@ -348,36 +399,42 @@ footer {
 
   <div class="menu-area">
     <nav>
-      <a href="#producten" id="navProducts">Producten</a>
-      <a href="#kwaliteit" id="navQuality">Kwaliteit</a>
-      <a href="#offerte" id="navQuote">Offerte</a>
-      <a href="#contact" id="navContact">Contact</a>
+      <a href="#producten">Producten</a>
+      <a href="#waarom">Waarom ARAV</a>
+      <a href="#offerte">Offerte</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <div class="lang">
-      <button onclick="setLang('nl')">🇳🇱</button>
-      <button onclick="setLang('en')">🇬🇧</button>
-      <button onclick="setLang('pl')">🇵🇱</button>
-      <button onclick="setLang('ar')">🇸🇦</button>
-      <button onclick="setLang('fr')">🇫🇷</button>
-      <button onclick="setLang('de')">🇩🇪</button>
+      <button>🇳🇱</button>
+      <button>🇬🇧</button>
+      <button>🇵🇱</button>
+      <button>🇸🇦</button>
+      <button>🇫🇷</button>
+      <button>🇩🇪</button>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-label">100% HALAL • B2B SUPPLY</div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label">100% HALAL • B2B SUPPLY</div>
 
-  <h1>Halal gevogelte en vlees tegen scherpe groothandelsprijzen.</h1>
-  <p>Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit voor horeca, retail en groothandel.</p>
+      <h1>Halal gevogelte en vlees tegen scherpe groothandelsprijzen.</h1>
+      <p>Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit voor horeca, retail en groothandel.</p>
 
-  <a class="btn" href="#offerte">Vraag direct een offerte aan</a>
+      <a class="btn" href="#offerte">Vraag direct een offerte aan</a>
 
-  <div class="trust">
-    <div>✔ 100% HALAL</div>
-    <div>✔ Levering NL / BE / DE</div>
-    <div>✔ B2B volumes</div>
-    <div>✔ Vers & diepvries</div>
+      <div class="trust">
+        <div>✔ 100% HALAL</div>
+        <div>✔ Levering NL / BE / DE</div>
+        <div>✔ B2B volumes</div>
+        <div>✔ Vers & diepvries</div>
+      </div>
+    </div>
+
+    <div class="hero-image"></div>
   </div>
 </section>
 
@@ -385,10 +442,63 @@ footer {
   <h2>Onze producten</h2>
 
   <div class="product-list">
-    <div class="product"><h3>Kip</h3><p>Verse en diepvries kipproducten voor horeca, retail en groothandel.</p></div>
-    <div class="product"><h3>Kalkoen</h3><p>Hoogwaardige kalkoenproducten voor professionele afnemers.</p></div>
-    <div class="product"><h3>Eend</h3><p>Eendproducten voor horeca, speciaalzaken en B2B-klanten.</p></div>
-    <div class="product"><h3>Vlees</h3><p>Halal vleesproducten op aanvraag en volgens beschikbare specificaties.</p></div>
+    <div class="product">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="product-content">
+        <h3>Kip</h3>
+        <p>Verse en diepvries kipproducten voor horeca, retail en groothandel.</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="product-content">
+        <h3>Kalkoen</h3>
+        <p>Hoogwaardige kalkoenproducten voor professionele afnemers.</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="product-content">
+        <h3>Eend</h3>
+        <p>Eendproducten voor horeca, speciaalzaken en B2B-klanten.</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=600&q=80');"></div>
+      <div class="product-content">
+        <h3>Vlees</h3>
+        <p>Halal vleesproducten op aanvraag en volgens beschikbare specificaties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="waarom" class="why">
+  <h2>Waarom ARAV MEATGROUP?</h2>
+
+  <div class="why-grid">
+    <div class="why-box">
+      <h3>Snelle levering</h3>
+      <p>Levering mogelijk in Nederland, België en Duitsland.</p>
+    </div>
+
+    <div class="why-box">
+      <h3>Scherpe prijzen</h3>
+      <p>Groothandelsprijzen gericht op horeca, retail en B2B-klanten.</p>
+    </div>
+
+    <div class="why-box">
+      <h3>Flexibele volumes</h3>
+      <p>Van kleinere B2B-orders tot grotere volumes en vaste leveringen.</p>
+    </div>
+
+    <div class="why-box">
+      <h3>Direct contact</h3>
+      <p>Snel schakelen via WhatsApp, telefoon of e-mail.</p>
+    </div>
   </div>
 </section>
 
@@ -396,9 +506,20 @@ footer {
   <h2>Kwaliteit & betrouwbaarheid</h2>
 
   <div class="quality-grid">
-    <div class="quality-box"><h3>Constante kwaliteit</h3><p>Wij richten ons op betrouwbare producten met duidelijke specificaties.</p></div>
-    <div class="quality-box"><h3>Snelle communicatie</h3><p>Direct contact via WhatsApp voor prijzen, volumes en beschikbaarheid.</p></div>
-    <div class="quality-box"><h3>B2B service</h3><p>Geschikt voor horeca, toko’s, supermarkten, retail en groothandel.</p></div>
+    <div class="quality-box">
+      <h3>Constante kwaliteit</h3>
+      <p>Wij richten ons op betrouwbare producten met duidelijke specificaties.</p>
+    </div>
+
+    <div class="quality-box">
+      <h3>Snelle communicatie</h3>
+      <p>Direct contact via WhatsApp voor prijzen, volumes en beschikbaarheid.</p>
+    </div>
+
+    <div class="quality-box">
+      <h3>B2B service</h3>
+      <p>Geschikt voor horeca, toko’s, supermarkten, retail en groothandel.</p>
+    </div>
   </div>
 </section>
 
