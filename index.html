@@ -23,7 +23,6 @@ body{
   font-family:Arial, Helvetica, sans-serif;
   color:var(--black);
   background:white;
-  padding-bottom:52px;
 }
 
 /* HEADER */
@@ -540,6 +539,27 @@ input,select,textarea{
   width:78%;
 }
 
+.halal-seal{
+  width:115px;
+  height:115px;
+  border:3px solid var(--gold);
+  color:var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  letter-spacing:1px;
+  transform:rotate(6deg);
+  flex-shrink:0;
+}
+
+.halal-seal span{
+  font-size:12px;
+  color:#bbb;
+}
+
 .footer-seal-row h3{
   color:var(--gold);
   font-size:28px;
@@ -579,36 +599,24 @@ input,select,textarea{
   color:#777;
 }
 
-/* WHATSAPP */
+/* WHATSAPP BUTTON */
 .whatsapp{
   position:fixed;
   right:24px;
-  bottom:70px;
+  bottom:24px;
   background:#25D366;
   color:white;
-  padding:16px 25px;
-  border-radius:50px;
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-decoration:none;
+  font-size:28px;
   font-weight:900;
   box-shadow:0 8px 25px rgba(0,0,0,.25);
   z-index:10;
-}
-
-.sticky-bar{
-  position:fixed;
-  left:0;
-  bottom:0;
-  width:100%;
-  background:#25D366;
-  text-align:center;
-  padding:13px;
-  z-index:9;
-}
-
-.sticky-bar a{
-  color:white;
-  font-weight:900;
-  text-decoration:none;
 }
 
 /* MOBILE */
@@ -670,12 +678,9 @@ input,select,textarea{
     padding:60px 24px 35px;
   }
 
-  .footer-stamp{
+  .footer-stamp,
+  .halal-seal{
     transform:rotate(0deg);
-  }
-
-  .whatsapp{
-    display:none;
   }
 }
 </style>
@@ -716,22 +721,21 @@ input,select,textarea{
 <section class="hero">
   <div class="hero-grid">
     <div>
-      <div class="label">PREMIUM HALAL LEVERANCIER • EUROPESE DISTRIBUTIE</div>
-      <h1>Premium halal gevogelte en vlees voor horeca en groothandel</h1>
+      <div class="label">PREMIUM LEVERANCIER • EUROPESE DISTRIBUTIE</div>
+      <h1>Premium gevogelte en vlees voor horeca en groothandel</h1>
       <p>Snelle levering, scherpe prijzen en betrouwbare kwaliteit voor professionele klanten.</p>
 
       <a class="btn" href="#offerte">Ontvang direct een prijsvoorstel</a>
 
       <p style="margin-top:14px; font-weight:bold; color:#7A0000;">
-        ⚡ Binnen 1 uur reactie op prijsaanvragen
+        Persoonlijke reactie op basis van volume, product en leverlocatie.
       </p>
 
       <div class="trust">
-        <div>✔ 100% HALAL</div>
+        <div>✔ Halal producten</div>
         <div>✔ Levering NL / BE / DE</div>
         <div>✔ B2B volumes</div>
         <div>✔ Vers & diepvries</div>
-        <div>✔ Snelle levering binnen 24-48 uur</div>
         <div>✔ Direct contact via WhatsApp</div>
       </div>
     </div>
@@ -743,7 +747,7 @@ input,select,textarea{
 <section id="over">
   <h2>Over ARAV MEATGROUP</h2>
   <p class="section-intro">
-    ARAV MEATGROUP richt zich op betrouwbare levering van halal gevogelte en vlees aan professionele klanten.
+    ARAV MEATGROUP richt zich op betrouwbare levering van gevogelte en vlees aan professionele klanten.
     Wij combineren scherpe prijzen met duidelijke communicatie en service voor B2B-afnemers.
   </p>
 
@@ -755,7 +759,7 @@ input,select,textarea{
 
     <div class="about-box">
       <h3>Groei met focus</h3>
-      <p>Onze focus ligt op gevogelte, waaronder kip, kalkoen en eend, aangevuld met halal vleesproducten op aanvraag.</p>
+      <p>Onze focus ligt op gevogelte, waaronder kip, kalkoen en eend, aangevuld met vleesproducten op aanvraag.</p>
     </div>
   </div>
 </section>
@@ -796,7 +800,7 @@ input,select,textarea{
       <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=700&q=80');"></div>
       <div class="product-content">
         <h3>Vlees</h3>
-        <p>Halal vleesproducten op aanvraag en volgens beschikbare specificaties.</p>
+        <p>Vleesproducten op aanvraag en volgens beschikbare specificaties.</p>
         <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20vlees" target="_blank">Vraag prijs →</a>
       </div>
     </div>
@@ -894,13 +898,13 @@ input,select,textarea{
 <section id="leveranciers" class="suppliers">
   <h2>Leverancier of partner worden?</h2>
   <p class="section-intro">
-    ARAV MEATGROUP staat open voor samenwerking met betrouwbare leveranciers, producenten en logistieke partners binnen halal gevogelte en vlees.
+    ARAV MEATGROUP staat open voor samenwerking met betrouwbare leveranciers, producenten en logistieke partners binnen gevogelte en vlees.
   </p>
 
   <div class="supplier-box">
     <div>
       <h3>Voor leveranciers</h3>
-      <p>Levert u kip, kalkoen, eend of halal vleesproducten? Neem contact met ons op met productspecificaties, volumes, certificeringen en levermogelijkheden.</p>
+      <p>Levert u kip, kalkoen, eend of vleesproducten? Neem contact met ons op met productspecificaties, volumes, certificeringen en levermogelijkheden.</p>
     </div>
 
     <div>
@@ -920,8 +924,8 @@ input,select,textarea{
 </section>
 
 <section class="halal">
-  <h2>100% HALAL</h2>
-  <p>Onze producten worden geleverd met focus op halal kwaliteit, vertrouwen en professionele afhandeling.</p>
+  <h2>Kwaliteit & vertrouwen</h2>
+  <p>Onze producten worden geleverd met focus op kwaliteit, duidelijke afspraken en professionele afhandeling.</p>
 </section>
 
 <section id="offerte" class="quote">
@@ -988,7 +992,7 @@ input,select,textarea{
 <section id="contact" class="contact-section">
   <div class="contact-top">
     <div>
-      <span class="footer-label">B2B HALAL SUPPLY</span>
+      <span class="footer-label">B2B SUPPLY • EUROPEAN DISTRIBUTION</span>
       <h2>Contact & samenwerking</h2>
       <p>
         Direct schakelen voor prijzen, volumes en leveringen. ARAV MEATGROUP levert aan professionele klanten in Nederland, België en Duitsland.
@@ -1005,7 +1009,7 @@ input,select,textarea{
       <h3>Direct contact</h3>
       <p><strong>Telefoon:</strong> +31 (0)6 19 59 86 66</p>
       <p><strong>E-mail:</strong> info@aravmeat.com</p>
-      <p><strong>Reactie:</strong> snel via WhatsApp</p>
+      <p><strong>Reactie:</strong> snel via WhatsApp of e-mail</p>
     </div>
 
     <div class="premium-box">
@@ -1032,10 +1036,14 @@ input,select,textarea{
       <img src="arav-logo.jpg" alt="ARAV MEATGROUP">
     </div>
 
+    <div class="halal-seal">
+      HALAL<br><span>QUALITY</span>
+    </div>
+
     <div>
       <h3>Fresh Quality & Trust</h3>
       <p>
-        Premium halal gevogelte en vlees voor professionele klanten.
+        Premium gevogelte en vlees voor professionele klanten.
         Betrouwbare levering, duidelijke communicatie en scherpe B2B-prijzen.
       </p>
     </div>
@@ -1044,7 +1052,7 @@ input,select,textarea{
   <div class="footer-grid">
     <div>
       <h4>ARAV MEATGROUP</h4>
-      <p>Halal gevogelte & vlees</p>
+      <p>Gevogelte & vlees</p>
       <p>Groothandel & distributie</p>
       <p>B2B leverancier</p>
     </div>
@@ -1075,19 +1083,13 @@ input,select,textarea{
 
   <div class="footer-bottom">
     <p>© 2026 ARAV MEATGROUP — Alle rechten voorbehouden</p>
-    <p>Premium Halal Supplier • European Distribution</p>
+    <p>Premium Supplier • European Distribution</p>
   </div>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">
-  WhatsApp
+  💬
 </a>
-
-<div class="sticky-bar">
-  <a href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20een%20prijs%20aanvragen" target="_blank">
-    📲 Vraag direct prijs via WhatsApp
-  </a>
-</div>
 
 <script>
 function showCountry(country){
