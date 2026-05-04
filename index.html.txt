@@ -1,0 +1,320 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, ShieldCheck, Truck, Snowflake, ArrowRight, CheckCircle2, Globe2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+const translations = {
+  nl: {
+    navAbout: "Over ons",
+    navProducts: "Producten",
+    navQuality: "Kwaliteit",
+    navContact: "Contact",
+    quote: "Offerte aanvragen",
+    badge: "Betrouwbare groothandel in kip en gevogelte",
+    heroTitle: "Premium vleesleverancier voor horeca, toko’s en groothandel.",
+    heroText: "ARAV MEATGROUP levert kwalitatieve kip- en gevogelteproducten met focus op versheid, betrouwbaarheid en service. Wij bouwen aan een sterke keten voor klanten in Nederland, België en Duitsland.",
+    contactCta: "Neem contact op",
+    productsCta: "Bekijk producten",
+    aboutTitle: "Een moderne vleespartner met internationale groeivisie.",
+    aboutText1: "ARAV MEATGROUP is opgericht met één duidelijk doel: professionele klanten voorzien van betrouwbare, kwalitatieve vleesproducten tegen eerlijke condities.",
+    aboutText2: "Door slimme inkoop, efficiënte verwerking en duidelijke service-afspraken willen wij uitgroeien tot een vaste partner voor horeca, toko’s, supermarkten en groothandels.",
+  },
+  en: {
+    navAbout: "About",
+    navProducts: "Products",
+    navQuality: "Quality",
+    navContact: "Contact",
+    quote: "Request quote",
+    badge: "Reliable poultry and meat wholesaler",
+    heroTitle: "Premium meat supplier for restaurants, retailers and wholesalers.",
+    heroText: "ARAV MEATGROUP supplies high-quality poultry products with a focus on freshness, reliability and service. We are building a strong supply chain across the Netherlands, Belgium and Germany.",
+    contactCta: "Contact us",
+    productsCta: "View products",
+    aboutTitle: "A modern meat partner with an international growth vision.",
+    aboutText1: "ARAV MEATGROUP was founded with one clear goal: to supply professional customers with reliable, high-quality meat products under fair conditions.",
+    aboutText2: "Through smart sourcing, efficient processing and clear service agreements, we aim to become a trusted partner for restaurants, retailers and wholesalers.",
+  },
+  pl: {
+    navAbout: "O nas",
+    navProducts: "Produkty",
+    navQuality: "Jakość",
+    navContact: "Kontakt",
+    quote: "Zapytaj o ofertę",
+    badge: "Zaufany hurtownik mięsa i drobiu",
+    heroTitle: "Premium dostawca mięsa dla gastronomii, sklepów i hurtowni.",
+    heroText: "ARAV MEATGROUP dostarcza wysokiej jakości produkty drobiowe, koncentrując się na świeżości, niezawodności i obsłudze.",
+    contactCta: "Kontakt",
+    productsCta: "Zobacz produkty",
+    aboutTitle: "Nowoczesny partner mięsny z międzynarodową wizją rozwoju.",
+    aboutText1: "ARAV MEATGROUP powstała, aby dostarczać profesjonalnym klientom niezawodne produkty mięsne wysokiej jakości.",
+    aboutText2: "Dzięki inteligentnym zakupom, sprawnej obróbce i jasnym ustaleniom chcemy być stałym partnerem dla klientów B2B.",
+  },
+  ar: {
+    navAbout: "من نحن",
+    navProducts: "المنتجات",
+    navQuality: "الجودة",
+    navContact: "اتصال",
+    quote: "طلب عرض سعر",
+    badge: "تاجر جملة موثوق للحوم والدواجن",
+    heroTitle: "مورد لحوم متميز للمطاعم والمتاجر وتجار الجملة.",
+    heroText: "توفر ARAV MEATGROUP منتجات دواجن عالية الجودة مع التركيز على الطزاجة والموثوقية والخدمة.",
+    contactCta: "تواصل معنا",
+    productsCta: "عرض المنتجات",
+    aboutTitle: "شريك حديث في قطاع اللحوم برؤية نمو دولية.",
+    aboutText1: "تأسست ARAV MEATGROUP بهدف واضح: تزويد العملاء المحترفين بمنتجات لحوم موثوقة وعالية الجودة.",
+    aboutText2: "من خلال الشراء الذكي والمعالجة الفعالة والاتفاقيات الواضحة، نهدف إلى أن نكون شريكًا موثوقًا لعملاء الأعمال.",
+  },
+  fr: {
+    navAbout: "À propos",
+    navProducts: "Produits",
+    navQuality: "Qualité",
+    navContact: "Contact",
+    quote: "Demander un devis",
+    badge: "Grossiste fiable en viande et volaille",
+    heroTitle: "Fournisseur premium de viande pour restaurants, commerces et grossistes.",
+    heroText: "ARAV MEATGROUP fournit des produits de volaille de qualité avec un focus sur la fraîcheur, la fiabilité et le service.",
+    contactCta: "Nous contacter",
+    productsCta: "Voir les produits",
+    aboutTitle: "Un partenaire viande moderne avec une vision internationale.",
+    aboutText1: "ARAV MEATGROUP a été créée avec un objectif clair : fournir aux clients professionnels des produits carnés fiables et de qualité.",
+    aboutText2: "Grâce à un sourcing intelligent, une transformation efficace et des accords clairs, nous voulons devenir un partenaire B2B de confiance.",
+  },
+  de: {
+    navAbout: "Über uns",
+    navProducts: "Produkte",
+    navQuality: "Qualität",
+    navContact: "Kontakt",
+    quote: "Angebot anfragen",
+    badge: "Zuverlässiger Großhandel für Fleisch und Geflügel",
+    heroTitle: "Premium-Fleischlieferant für Gastronomie, Einzelhandel und Großhandel.",
+    heroText: "ARAV MEATGROUP liefert hochwertige Geflügelprodukte mit Fokus auf Frische, Zuverlässigkeit und Service.",
+    contactCta: "Kontakt aufnehmen",
+    productsCta: "Produkte ansehen",
+    aboutTitle: "Ein moderner Fleischpartner mit internationaler Wachstumsvision.",
+    aboutText1: "ARAV MEATGROUP wurde mit einem klaren Ziel gegründet: professionelle Kunden zuverlässig mit hochwertigen Fleischprodukten zu beliefern.",
+    aboutText2: "Durch intelligente Beschaffung, effiziente Verarbeitung und klare Servicevereinbarungen wollen wir ein fester B2B-Partner werden.",
+  },
+};
+
+const languages = [
+  { code: "nl", label: "NL", flag: "🇳🇱" },
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "pl", label: "PL", flag: "🇵🇱" },
+  { code: "ar", label: "AR", flag: "🇸🇦" },
+  { code: "fr", label: "FR", flag: "🇫🇷" },
+  { code: "de", label: "DE", flag: "🇩🇪" },
+];
+
+export default function AravMeatGroupWebsite() {
+  const [language, setLanguage] = React.useState("nl");
+  const t = translations[language];
+  const isArabic = language === "ar";
+
+  return (
+    <div dir={isArabic ? "rtl" : "ltr"} className="min-h-screen bg-[#0F0F0F] text-white">
+      <header className="sticky top-0 z-50 border-b border-[#D4AF37]/20 bg-[#0F0F0F]/95 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4">
+          <div className="flex items-center gap-4">
+            <div className="flex h-16 w-28 items-center justify-center overflow-hidden">
+              <img src="/arav-logo.png" alt="ARAV MEATGROUP logo" className="h-full w-full object-contain" />
+            </div>
+            <div>
+              <p className="text-xl font-black tracking-[0.08em] text-white">ARAV MEATGROUP</p>
+              <p className="text-xs uppercase tracking-[0.32em] text-[#D4AF37]">Fresh Quality & Trust</p>
+            </div>
+          </div>
+
+          <nav className="hidden gap-8 text-sm font-medium text-neutral-300 lg:flex">
+            <a href="#about" className="hover:text-[#D4AF37]">{t.navAbout}</a>
+            <a href="#products" className="hover:text-[#D4AF37]">{t.navProducts}</a>
+            <a href="#quality" className="hover:text-[#D4AF37]">{t.navQuality}</a>
+            <a href="#contact" className="hover:text-[#D4AF37]">{t.navContact}</a>
+          </nav>
+
+          <div className="hidden items-center gap-2 text-xs md:flex">
+            <Globe2 className="h-4 w-4 text-[#D4AF37]" />
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code)}
+                className={`rounded-full border px-2.5 py-1 transition ${language === lang.code ? "border-[#D4AF37]/50 bg-[#D4AF37]/15 text-[#D4AF37]" : "border-white/10 text-neutral-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]"}`}
+              >
+                {lang.flag} {lang.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(122,0,0,0.45),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.20),transparent_35%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.04)_0%,transparent_35%,rgba(212,175,55,0.05)_100%)]" />
+          <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <p className="mb-5 inline-flex rounded-full border border-[#D4AF37]/35 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold text-[#D4AF37]">
+                {t.badge}
+              </p>
+              <h1 className="mb-7 text-5xl font-black leading-[0.98] tracking-tight md:text-7xl">
+                {t.heroTitle}
+              </h1>
+              <p className="mb-9 max-w-xl text-lg leading-8 text-neutral-300">
+                {t.heroText}
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button className="rounded-2xl bg-[#7A0000] px-8 py-6 text-base font-bold hover:bg-[#5D0000]">
+                  {t.contactCta} <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" className="rounded-2xl border-[#D4AF37]/35 bg-white/5 px-8 py-6 text-base text-white hover:bg-[#D4AF37]/10">
+                  {t.productsCta}
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }}>
+              <div className="rounded-[2.2rem] border border-[#D4AF37]/20 bg-white/[0.04] p-6 shadow-2xl shadow-black/40">
+                <div className="mb-6 flex justify-center">
+                  <img src="/arav-logo.png" alt="ARAV MEATGROUP logo" className="h-44 w-72 object-contain drop-shadow-2xl" />
+                </div>
+                <div className="rounded-[1.7rem] border border-white/10 bg-gradient-to-br from-[#1A1212] to-[#0F0F0F] p-8">
+                  <div className="mb-8 grid grid-cols-2 gap-4">
+                    <InfoCard icon={<ShieldCheck />} title="Food Safety" text="HACCP & traceerbaarheid" />
+                    <InfoCard icon={<Truck />} title="Levering" text="Snel en betrouwbaar" />
+                    <InfoCard icon={<Snowflake />} title="Vers & Frozen" text="Flexibele supply" />
+                    <InfoCard icon={<CheckCircle2 />} title="Service" text="B2B maatwerk" />
+                  </div>
+                  <div className="rounded-3xl border border-[#D4AF37]/25 bg-[#D4AF37]/10 p-6">
+                    <p className="mb-2 text-sm uppercase tracking-[0.28em] text-[#D4AF37]">ARAV Promise</p>
+                    <p className="text-2xl font-bold">Fresh quality. Clear agreements. Reliable delivery.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="about" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D4AF37]">{t.navAbout}</p>
+              <h2 className="text-4xl font-black md:text-5xl">{t.aboutTitle}</h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-neutral-300">
+              <p>{t.aboutText1}</p>
+              <p>{t.aboutText2}</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="products" className="bg-[#F6F1E8] py-20 text-[#111111]">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-12 max-w-2xl">
+              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#7A0000]">{t.navProducts}</p>
+              <h2 className="text-4xl font-black md:text-5xl">Productaanbod</h2>
+              <p className="mt-5 text-lg leading-8 text-neutral-600">Levering op maat voor professionele klanten. Beschikbaarheid afhankelijk van volume, herkomst en specificatie.</p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              <ProductCard title="Kippendijen" items={["Heel of gesneden", "Blokjes of reepjes", "Vers of diepvries mogelijk"]} />
+              <ProductCard title="Kipfilet" items={["Horeca kwaliteit", "Portie- en snijwerk", "Geschikt voor restaurants en toko’s"]} />
+              <ProductCard title="Kalkoendijfilet" items={["EU sourcing", "Frozen opties", "B2B volumes"]} />
+            </div>
+          </div>
+        </section>
+
+        <section id="quality" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D4AF37]">Kwaliteit & betrouwbaarheid</p>
+              <h2 className="mb-6 text-4xl font-black md:text-5xl">Gebouwd op voedselveiligheid, service en transparantie.</h2>
+              <p className="text-lg leading-8 text-neutral-300">Voor onze klanten draait alles om constante kwaliteit, correcte levering en duidelijke afspraken. Daarom werken wij met controle op herkomst, temperatuur, documentatie en traceerbaarheid.</p>
+            </div>
+            <div className="grid gap-4">
+              {["Focus op verse en betrouwbare supply", "Duidelijke specificaties per product", "Professionele levering voor B2B klanten", "Mogelijkheid tot maatwerk in snijden en verpakken"].map((item) => (
+                <div key={item} className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <CheckCircle2 className="h-6 w-6 text-[#D4AF37]" />
+                  <span className="text-neutral-200">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-gradient-to-r from-[#4B0000] via-[#7A0000] to-[#0F0F0F] py-20">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-black md:text-5xl">Op zoek naar een vaste vleesleverancier?</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-neutral-200">Neem contact op voor prijzen, productbeschikbaarheid en leveringsmogelijkheden.</p>
+            <Button className="rounded-2xl bg-[#D4AF37] px-8 py-6 text-base font-bold text-[#0F0F0F] hover:bg-[#B99125]">Vraag direct een offerte aan</Button>
+          </div>
+        </section>
+
+        <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#D4AF37]">Contact</p>
+              <h2 className="mb-6 text-4xl font-black md:text-5xl">Laat ons weten wat u zoekt.</h2>
+              <p className="text-lg leading-8 text-neutral-300">Wij denken graag mee over volumes, specificaties, snijwerk, leverfrequentie en prijsafspraken.</p>
+            </div>
+            <Card className="rounded-[2rem] border-[#D4AF37]/20 bg-white/5 text-white">
+              <CardContent className="space-y-5 p-8">
+                <ContactLine icon={<Phone />} label="Telefoon" value="+31 (0)6 19 59 86 66" />
+                <ContactLine icon={<Mail />} label="E-mail" value="info@aravmeat.com" />
+                <ContactLine icon={<MapPin />} label="Regio" value="Den Haag / Nederland" />
+                <div className="pt-4">
+                  <Button className="w-full rounded-2xl bg-[#7A0000] py-6 text-base font-bold hover:bg-[#5D0000]">Stuur een aanvraag</Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-white/10 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-6 text-sm text-neutral-400 md:flex-row">
+          <p>© 2026 ARAV MEATGROUP. All rights reserved.</p>
+          <p>Fresh Quality & Trust</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function InfoCard({ icon, title, text }) {
+  return (
+    <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+      <div className="mb-3 text-[#D4AF37]">{React.cloneElement(icon, { className: "h-6 w-6" })}</div>
+      <p className="font-semibold">{title}</p>
+      <p className="mt-1 text-sm text-neutral-400">{text}</p>
+    </div>
+  );
+}
+
+function ProductCard({ title, items }) {
+  return (
+    <Card className="rounded-[2rem] border-[#E3D2AA] shadow-sm">
+      <CardContent className="p-8">
+        <h3 className="mb-5 text-2xl font-black">{title}</h3>
+        <ul className="space-y-3">
+          {items.map((item) => (
+            <li key={item} className="flex gap-3 text-neutral-700">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#7A0000]" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
+
+function ContactLine({ icon, label, value }) {
+  return (
+    <div className="flex gap-4 rounded-3xl border border-white/10 bg-black/30 p-5">
+      <div className="text-[#D4AF37]">{React.cloneElement(icon, { className: "h-6 w-6" })}</div>
+      <div>
+        <p className="text-sm text-neutral-400">{label}</p>
+        <p className="font-semibold">{value}</p>
+      </div>
+    </div>
+  );
+}
