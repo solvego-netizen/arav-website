@@ -1,1 +1,636 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARAV Meat Group | Fresh Quality & Trust</title>
+  <meta name="description" content="ARAV Meat Group - premium vleesleverancier voor horeca, toko's, supermarkten en groothandel." />
+  <style>
+    :root {
+      --arav-red: #B5282B;
+      --arav-red-dark: #8F1F24;
+      --arav-gold: #C99A22;
+      --arav-dark: #151111;
+      --arav-soft: #F8F4ED;
+      --text-muted: #d6d0ca;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--arav-dark);
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(21, 17, 17, 0.96);
+      border-bottom: 1px solid rgba(201, 154, 34, 0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 230px;
+    }
+
+    .brand img {
+      width: 76px;
+      height: 54px;
+      object-fit: contain;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: 0.4px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--arav-gold);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav a:hover { color: var(--arav-gold); }
+
+    .languages {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .languages button {
+      cursor: pointer;
+      border: 1px solid rgba(201, 154, 34, 0.22);
+      color: #ddd;
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .languages button.active {
+      background: rgba(201, 154, 34, 0.17);
+      color: var(--arav-gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--arav-red);
+      color: white;
+      border: none;
+      border-radius: 18px;
+      padding: 14px 22px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover { background: var(--arav-red-dark); transform: translateY(-1px); }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,154,34,0.35);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(181,40,43,0.38), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(201,154,34,0.22), transparent 34%);
+    }
+
+    .hero-grid {
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 60px;
+      padding: 76px 0;
+    }
+
+    .badge {
+      display: inline-block;
+      color: var(--arav-gold);
+      border: 1px solid rgba(201,154,34,0.38);
+      background: rgba(201,154,34,0.1);
+      border-radius: 999px;
+      padding: 10px 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 74px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 630px;
+      color: var(--text-muted);
+      font-size: 19px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.055);
+      border-radius: 34px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .logo-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .logo-box img {
+      width: 210px;
+      height: 150px;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 28px rgba(0,0,0,0.35));
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 20px;
+    }
+
+    .feature b { display: block; margin-bottom: 4px; }
+    .feature span { color: #bfb8b2; font-size: 14px; }
+
+    .promise {
+      background: rgba(201,154,34,0.12);
+      border: 1px solid rgba(201,154,34,0.28);
+      border-radius: 28px;
+      padding: 24px;
+    }
+
+    .promise small {
+      color: var(--arav-gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .promise strong {
+      display: block;
+      font-size: 25px;
+      margin-top: 8px;
+    }
+
+    section { padding: 90px 0; }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      color: var(--arav-gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+
+    .text-block p {
+      color: var(--text-muted);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .light {
+      background: var(--arav-soft);
+      color: var(--arav-dark);
+    }
+
+    .light .eyebrow { color: var(--arav-red); }
+    .light p { color: #5f5650; }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e6d7b8;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 14px 35px rgba(0,0,0,0.06);
+    }
+
+    .product-card h3 {
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .product-card li {
+      list-style: none;
+      margin: 12px 0;
+      color: #554b45;
+    }
+
+    .product-card li::before {
+      content: "✓";
+      color: var(--arav-red);
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .quality-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quality-list div {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 20px;
+      color: #eee;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, var(--arav-red-dark), var(--arav-red), var(--arav-dark));
+      text-align: center;
+    }
+
+    .cta p {
+      color: #eee;
+      max-width: 720px;
+      margin: 18px auto 32px;
+      font-size: 18px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 34px;
+      padding: 34px;
+    }
+
+    .contact-row {
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .contact-row small { color: #bfb8b2; display: block; }
+    .contact-row strong { font-size: 18px; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 28px 0;
+      color: #a9a09a;
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    [dir="rtl"] body, [dir="rtl"] .container { text-align: right; }
+    [dir="rtl"] .hero-actions { justify-content: flex-start; }
+
+    @media (max-width: 920px) {
+      .nav { flex-wrap: wrap; }
+      nav { display: none; }
+      .hero-grid, .section-grid { grid-template-columns: 1fr; }
+      .hero-grid { min-height: auto; }
+      .products { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 24px, 1200px); }
+      .feature-grid { grid-template-columns: 1fr; }
+      .languages { justify-content: flex-start; }
+      .brand strong { font-size: 16px; }
+      .brand img { width: 64px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="arav-logo.jpg" alt="ARAV Meat Group logo" />
+        <div>
+          <strong>ARAV Meat Group</strong>
+          <span>Fresh Quality & Trust</span>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about" data-i18n="navAbout">Over ons</a>
+        <a href="#products" data-i18n="navProducts">Producten</a>
+        <a href="#quality" data-i18n="navQuality">Kwaliteit</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <div class="languages">
+        <button class="active" onclick="setLang('nl', this)">🇳🇱 NL</button>
+        <button onclick="setLang('en', this)">🇬🇧 EN</button>
+        <button onclick="setLang('pl', this)">🇵🇱 PL</button>
+        <button onclick="setLang('ar', this)">🇸🇦 AR</button>
+        <button onclick="setLang('fr', this)">🇫🇷 FR</button>
+        <button onclick="setLang('de', this)">🇩🇪 DE</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge" data-i18n="badge">Betrouwbare groothandel in kip en gevogelte</span>
+          <h1 data-i18n="heroTitle">Premium vleesleverancier voor horeca, toko’s en groothandel.</h1>
+          <p data-i18n="heroText">ARAV Meat Group levert kwalitatieve kip- en gevogelteproducten met focus op versheid, betrouwbaarheid en service. Wij bouwen aan een sterke keten voor klanten in Nederland, België en Duitsland.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact" data-i18n="contactCta">Neem contact op</a>
+            <a class="btn secondary" href="#products" data-i18n="productsCta">Bekijk producten</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="logo-box">
+            <img src="arav-logo.jpg" alt="ARAV Meat Group logo" />
+          </div>
+          <div class="feature-grid">
+            <div class="feature"><b>Food Safety</b><span>HACCP & traceerbaarheid</span></div>
+            <div class="feature"><b>Levering</b><span>Snel en betrouwbaar</span></div>
+            <div class="feature"><b>Vers & Frozen</b><span>Flexibele supply</span></div>
+            <div class="feature"><b>Service</b><span>B2B maatwerk</span></div>
+          </div>
+          <div class="promise">
+            <small>ARAV Promise</small>
+            <strong>Fresh quality. Clear agreements. Reliable delivery.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-grid">
+        <div>
+          <div class="eyebrow" data-i18n="aboutLabel">Over ons</div>
+          <h2 data-i18n="aboutTitle">Een moderne vleespartner met groeivisie.</h2>
+        </div>
+        <div class="text-block">
+          <p data-i18n="aboutText1">ARAV Meat Group is opgericht met één duidelijk doel: klanten voorzien van betrouwbare, kwalitatieve vleesproducten tegen eerlijke condities.</p>
+          <p data-i18n="aboutText2">Door slimme inkoop, efficiënte verwerking en duidelijke service-afspraken willen wij uitgroeien tot een vaste partner voor horeca, toko’s, supermarkten en groothandels.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="light">
+      <div class="container">
+        <div class="eyebrow" data-i18n="productsLabel">Producten</div>
+        <h2 data-i18n="productsTitle">Productaanbod</h2>
+        <p data-i18n="productsIntro">Levering op maat voor professionele klanten. Beschikbaarheid afhankelijk van volume, herkomst en specificatie.</p>
+
+        <div class="products">
+          <div class="product-card">
+            <h3>Kippendijen</h3>
+            <ul><li>Heel of gesneden</li><li>Blokjes of reepjes</li><li>Vers of diepvries mogelijk</li></ul>
+          </div>
+          <div class="product-card">
+            <h3>Kipfilet</h3>
+            <ul><li>Horeca kwaliteit</li><li>Portie- en snijwerk</li><li>Voor restaurants en toko’s</li></ul>
+          </div>
+          <div class="product-card">
+            <h3>Kalkoendijfilet</h3>
+            <ul><li>EU sourcing</li><li>Frozen opties</li><li>B2B volumes</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quality">
+      <div class="container section-grid">
+        <div>
+          <div class="eyebrow" data-i18n="qualityLabel">Kwaliteit & betrouwbaarheid</div>
+          <h2 data-i18n="qualityTitle">Gebouwd op voedselveiligheid, service en transparantie.</h2>
+          <p data-i18n="qualityText">Voor onze klanten draait alles om constante kwaliteit, correcte levering en duidelijke afspraken.</p>
+        </div>
+        <div class="quality-list">
+          <div>✓ Focus op verse en betrouwbare supply</div>
+          <div>✓ Duidelijke specificaties per product</div>
+          <div>✓ Professionele levering voor B2B klanten</div>
+          <div>✓ Mogelijkheid tot maatwerk in snijden en verpakken</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 data-i18n="ctaTitle">Op zoek naar een vaste vleesleverancier?</h2>
+        <p data-i18n="ctaText">Neem contact op voor prijzen, productbeschikbaarheid en leveringsmogelijkheden.</p>
+        <a class="btn" href="#contact" data-i18n="quote">Vraag direct een offerte aan</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-grid">
+        <div>
+          <div class="eyebrow" data-i18n="contactLabel">Contact</div>
+          <h2 data-i18n="contactTitle">Laat ons weten wat u zoekt.</h2>
+          <p data-i18n="contactText">Wij denken graag mee over volumes, specificaties, snijwerk, leverfrequentie en prijsafspraken.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><small>Telefoon</small><strong>+31 (0)6 19 59 86 66</strong></div>
+          <div class="contact-row"><small>E-mail</small><strong>info@aravmeat.com</strong></div>
+          <div class="contact-row"><small>Regio</small><strong>Den Haag / Nederland</strong></div>
+          <a class="btn" href="mailto:info@aravmeat.com">Stuur een aanvraag</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 ARAV Meat Group. All rights reserved.</span>
+      <span>Fresh Quality & Trust</span>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      nl: {
+        navAbout:"Over ons", navProducts:"Producten", navQuality:"Kwaliteit", navContact:"Contact",
+        badge:"Betrouwbare groothandel in kip en gevogelte",
+        heroTitle:"Premium vleesleverancier voor horeca, toko’s en groothandel.",
+        heroText:"ARAV Meat Group levert kwalitatieve kip- en gevogelteproducten met focus op versheid, betrouwbaarheid en service. Wij bouwen aan een sterke keten voor klanten in Nederland, België en Duitsland.",
+        contactCta:"Neem contact op", productsCta:"Bekijk producten",
+        aboutLabel:"Over ons", aboutTitle:"Een moderne vleespartner met groeivisie.",
+        aboutText1:"ARAV Meat Group is opgericht met één duidelijk doel: klanten voorzien van betrouwbare, kwalitatieve vleesproducten tegen eerlijke condities.",
+        aboutText2:"Door slimme inkoop, efficiënte verwerking en duidelijke service-afspraken willen wij uitgroeien tot een vaste partner voor horeca, toko’s, supermarkten en groothandels.",
+        productsLabel:"Producten", productsTitle:"Productaanbod", productsIntro:"Levering op maat voor professionele klanten. Beschikbaarheid afhankelijk van volume, herkomst en specificatie.",
+        qualityLabel:"Kwaliteit & betrouwbaarheid", qualityTitle:"Gebouwd op voedselveiligheid, service en transparantie.", qualityText:"Voor onze klanten draait alles om constante kwaliteit, correcte levering en duidelijke afspraken.",
+        ctaTitle:"Op zoek naar een vaste vleesleverancier?", ctaText:"Neem contact op voor prijzen, productbeschikbaarheid en leveringsmogelijkheden.",
+        quote:"Vraag direct een offerte aan", contactLabel:"Contact", contactTitle:"Laat ons weten wat u zoekt.", contactText:"Wij denken graag mee over volumes, specificaties, snijwerk, leverfrequentie en prijsafspraken."
+      },
+      en: {
+        navAbout:"About", navProducts:"Products", navQuality:"Quality", navContact:"Contact",
+        badge:"Reliable poultry and meat wholesaler",
+        heroTitle:"Premium meat supplier for restaurants, retailers and wholesalers.",
+        heroText:"ARAV Meat Group supplies high-quality poultry products with a focus on freshness, reliability and service. We are building a strong supply chain across the Netherlands, Belgium and Germany.",
+        contactCta:"Contact us", productsCta:"View products",
+        aboutLabel:"About", aboutTitle:"A modern meat partner with a growth vision.",
+        aboutText1:"ARAV Meat Group was founded with one clear goal: to supply professional customers with reliable, high-quality meat products under fair conditions.",
+        aboutText2:"Through smart sourcing, efficient processing and clear service agreements, we aim to become a trusted partner for restaurants, retailers and wholesalers.",
+        productsLabel:"Products", productsTitle:"Product range", productsIntro:"Tailor-made supply for professional customers. Availability depends on volume, origin and specification.",
+        qualityLabel:"Quality & reliability", qualityTitle:"Built on food safety, service and transparency.", qualityText:"For our customers, consistent quality, correct delivery and clear agreements are essential.",
+        ctaTitle:"Looking for a reliable meat supplier?", ctaText:"Contact us for prices, availability and delivery options.",
+        quote:"Request a quote", contactLabel:"Contact", contactTitle:"Tell us what you are looking for.", contactText:"We are happy to discuss volumes, specifications, processing, delivery frequency and pricing."
+      },
+      pl: {
+        navAbout:"O nas", navProducts:"Produkty", navQuality:"Jakość", navContact:"Kontakt",
+        badge:"Zaufany hurtownik mięsa i drobiu",
+        heroTitle:"Premium dostawca mięsa dla gastronomii, sklepów i hurtowni.",
+        heroText:"ARAV Meat Group dostarcza wysokiej jakości produkty drobiowe, koncentrując się na świeżości, niezawodności i obsłudze.",
+        contactCta:"Kontakt", productsCta:"Zobacz produkty",
+        aboutLabel:"O nas", aboutTitle:"Nowoczesny partner mięsny z wizją rozwoju.",
+        aboutText1:"ARAV Meat Group powstała, aby dostarczać profesjonalnym klientom niezawodne produkty mięsne wysokiej jakości.",
+        aboutText2:"Dzięki inteligentnym zakupom, sprawnej obróbce i jasnym ustaleniom chcemy być stałym partnerem dla klientów B2B.",
+        productsLabel:"Produkty", productsTitle:"Oferta produktów", productsIntro:"Dostawy dopasowane do klientów profesjonalnych.",
+        qualityLabel:"Jakość i niezawodność", qualityTitle:"Oparte na bezpieczeństwie żywności, obsłudze i przejrzystości.", qualityText:"Dla naszych klientów liczy się stała jakość, właściwa dostawa i jasne ustalenia.",
+        ctaTitle:"Szukasz stałego dostawcy mięsa?", ctaText:"Skontaktuj się z nami w sprawie cen i dostaw.",
+        quote:"Zapytaj o ofertę", contactLabel:"Kontakt", contactTitle:"Powiedz nam, czego szukasz.", contactText:"Chętnie omówimy ilości, specyfikacje, obróbkę, częstotliwość dostaw i ceny."
+      },
+      ar: {
+        navAbout:"من نحن", navProducts:"المنتجات", navQuality:"الجودة", navContact:"اتصال",
+        badge:"تاجر جملة موثوق للحوم والدواجن",
+        heroTitle:"مورد لحوم متميز للمطاعم والمتاجر وتجار الجملة.",
+        heroText:"توفر ARAV Meat Group منتجات دواجن عالية الجودة مع التركيز على الطزاجة والموثوقية والخدمة.",
+        contactCta:"تواصل معنا", productsCta:"عرض المنتجات",
+        aboutLabel:"من نحن", aboutTitle:"شريك حديث في قطاع اللحوم برؤية نمو واضحة.",
+        aboutText1:"تأسست ARAV Meat Group بهدف واضح: تزويد العملاء المحترفين بمنتجات لحوم موثوقة وعالية الجودة.",
+        aboutText2:"من خلال الشراء الذكي والمعالجة الفعالة والاتفاقيات الواضحة، نهدف إلى أن نكون شريكًا موثوقًا لعملاء الأعمال.",
+        productsLabel:"المنتجات", productsTitle:"مجموعة المنتجات", productsIntro:"توريد مخصص للعملاء المحترفين حسب الكمية والمواصفات.",
+        qualityLabel:"الجودة والموثوقية", qualityTitle:"مبني على سلامة الغذاء والخدمة والشفافية.", qualityText:"الجودة الثابتة والتسليم الصحيح والاتفاقيات الواضحة هي أساس عملنا.",
+        ctaTitle:"هل تبحث عن مورد لحوم موثوق؟", ctaText:"تواصل معنا لمعرفة الأسعار والتوفر وخيارات التسليم.",
+        quote:"طلب عرض سعر", contactLabel:"اتصال", contactTitle:"أخبرنا بما تبحث عنه.", contactText:"يسعدنا مناقشة الكميات والمواصفات والمعالجة وتكرار التسليم والأسعار."
+      },
+      fr: {
+        navAbout:"À propos", navProducts:"Produits", navQuality:"Qualité", navContact:"Contact",
+        badge:"Grossiste fiable en viande et volaille",
+        heroTitle:"Fournisseur premium de viande pour restaurants, commerces et grossistes.",
+        heroText:"ARAV Meat Group fournit des produits de volaille de qualité avec un focus sur la fraîcheur, la fiabilité et le service.",
+        contactCta:"Nous contacter", productsCta:"Voir les produits",
+        aboutLabel:"À propos", aboutTitle:"Un partenaire viande moderne avec une vision de croissance.",
+        aboutText1:"ARAV Meat Group a été créée avec un objectif clair : fournir aux clients professionnels des produits carnés fiables et de qualité.",
+        aboutText2:"Grâce à un sourcing intelligent, une transformation efficace et des accords clairs, nous voulons devenir un partenaire B2B de confiance.",
+        productsLabel:"Produits", productsTitle:"Gamme de produits", productsIntro:"Approvisionnement sur mesure pour clients professionnels.",
+        qualityLabel:"Qualité & fiabilité", qualityTitle:"Fondé sur la sécurité alimentaire, le service et la transparence.", qualityText:"Nos clients attendent qualité constante, livraison correcte et accords clairs.",
+        ctaTitle:"Vous cherchez un fournisseur de viande fiable ?", ctaText:"Contactez-nous pour les prix, disponibilités et livraisons.",
+        quote:"Demander un devis", contactLabel:"Contact", contactTitle:"Dites-nous ce que vous cherchez.", contactText:"Nous discutons volontiers volumes, spécifications, découpe, fréquence de livraison et prix."
+      },
+      de: {
+        navAbout:"Über uns", navProducts:"Produkte", navQuality:"Qualität", navContact:"Kontakt",
+        badge:"Zuverlässiger Großhandel für Fleisch und Geflügel",
+        heroTitle:"Premium-Fleischlieferant für Gastronomie, Einzelhandel und Großhandel.",
+        heroText:"ARAV Meat Group liefert hochwertige Geflügelprodukte mit Fokus auf Frische, Zuverlässigkeit und Service.",
+        contactCta:"Kontakt aufnehmen", productsCta:"Produkte ansehen",
+        aboutLabel:"Über uns", aboutTitle:"Ein moderner Fleischpartner mit Wachstumsvision.",
+        aboutText1:"ARAV Meat Group wurde mit einem klaren Ziel gegründet: professionelle Kunden zuverlässig mit hochwertigen Fleischprodukten zu beliefern.",
+        aboutText2:"Durch intelligente Beschaffung, effiziente Verarbeitung und klare Servicevereinbarungen wollen wir ein fester B2B-Partner werden.",
+        productsLabel:"Produkte", productsTitle:"Produktsortiment", productsIntro:"Lieferung nach Maß für professionelle Kunden.",
+        qualityLabel:"Qualität & Zuverlässigkeit", qualityTitle:"Auf Lebensmittelsicherheit, Service und Transparenz aufgebaut.", qualityText:"Für unsere Kunden zählen konstante Qualität, korrekte Lieferung und klare Absprachen.",
+        ctaTitle:"Suchen Sie einen festen Fleischlieferanten?", ctaText:"Kontaktieren Sie uns für Preise, Verfügbarkeit und Lieferoptionen.",
+        quote:"Angebot anfragen", contactLabel:"Kontakt", contactTitle:"Sagen Sie uns, was Sie suchen.", contactText:"Wir beraten gerne zu Mengen, Spezifikationen, Verarbeitung, Lieferfrequenz und Preisen."
+      }
+    };
+
+    function setLang(lang, button) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll(".languages button").forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    }
+  </script>
+</body>
+</html>
