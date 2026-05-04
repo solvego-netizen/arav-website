@@ -14,11 +14,14 @@ body {
 }
 
 header {
+ header {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 40px;
-  border-bottom:1px solid #333;
+  padding:25px 60px;
+  border-bottom:1px solid #222;
+}
+
 }
 
 .logo {
@@ -28,12 +31,16 @@ header {
 }
 
 .logo img {
-  width:100px;
+  width:140px;
+  height:auto;
 }
-
-.logo h1 {
+.logo {
+  .logo h1 {
   margin:0;
-  font-size:20px;
+  font-size:22px;
+  letter-spacing:2px;
+  font-weight:900;
+}
 }
 
 .hero {
@@ -57,12 +64,13 @@ header {
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="arav-logo.jpg">
-    <h1>ARAV MEATGROUP</h1>
-  </div>
-</header>
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 60px;
+  border-bottom:1px solid #222;
+}
 
 <section class="hero">
   <h2>Betrouwbare leverancier van kip en kalkoen</h2>
