@@ -82,6 +82,7 @@ nav a{
   padding:11px 17px;
   border-radius:40px;
   font-size:14px;
+  transition:.2s;
 }
 
 nav a:hover{
@@ -153,6 +154,11 @@ nav a:hover{
   background-size:cover;
   background-position:center;
   box-shadow:0 20px 55px rgba(0,0,0,.18);
+  transition:.3s;
+}
+
+.hero-image:hover{
+  transform:scale(1.02);
 }
 
 .btn{
@@ -166,10 +172,12 @@ nav a:hover{
   margin-top:30px;
   border:none;
   cursor:pointer;
+  transition:.2s;
 }
 
 .btn:hover{
   background:var(--red-dark);
+  transform:translateY(-2px);
 }
 
 .trust{
@@ -194,7 +202,7 @@ section{
 
 h2{
   font-size:42px;
-  margin:0 0 34px;
+  margin:0 0 20px;
 }
 
 .section-intro{
@@ -204,8 +212,11 @@ h2{
   margin-bottom:38px;
 }
 
-.about-grid,
-.process-grid{
+.about{
+  background:white;
+}
+
+.about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:35px;
@@ -234,6 +245,12 @@ h2{
   border-radius:22px;
   overflow:hidden;
   box-shadow:0 8px 25px rgba(0,0,0,.04);
+  transition:.25s;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
 }
 
 .product-img{
@@ -256,9 +273,39 @@ h2{
   background:white;
 }
 
-.video-box iframe{
-  border-radius:25px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+.process-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.video-box{
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80");
+  background-size:cover;
+  background-position:center;
+  min-height:360px;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+.play{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:rgba(255,255,255,.92);
+  color:var(--red);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  font-weight:900;
 }
 
 .steps{
@@ -289,6 +336,11 @@ h2{
   border-radius:22px;
   padding:32px;
   box-shadow:0 8px 25px rgba(0,0,0,.04);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
 }
 
 .card h3{
@@ -349,22 +401,12 @@ input,select,textarea{
   font-size:15px;
 }
 
-.contact-section{
-  background:#f9f9f9;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-
-.contact-box{
-  background:white;
+.contact-card{
+  max-width:700px;
+  background:#fafafa;
   border:1px solid #eee;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  border-radius:22px;
+  padding:35px;
 }
 
 .whatsapp{
@@ -381,32 +423,10 @@ input,select,textarea{
   z-index:10;
 }
 
-.footer{
+footer{
   background:#111;
   color:white;
-  padding:50px 80px;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-  margin-bottom:30px;
-}
-
-.footer h4{
-  margin-bottom:10px;
-}
-
-.footer p{
-  color:#ccc;
-  margin:4px 0;
-}
-
-.copyright{
-  text-align:center;
-  font-size:12px;
-  color:#777;
+  padding:34px 80px;
 }
 
 @media(max-width:1000px){
@@ -441,9 +461,7 @@ input,select,textarea{
   .products-grid,
   .why-grid,
   .quality-grid,
-  .form-grid,
-  .contact-grid,
-  .footer-grid{
+  .form-grid{
     grid-template-columns:1fr;
   }
 
@@ -510,7 +528,7 @@ input,select,textarea{
   </div>
 </section>
 
-<section id="over">
+<section id="over" class="about">
   <h2>Over ARAV MEATGROUP</h2>
   <p class="section-intro">
     ARAV MEATGROUP richt zich op betrouwbare levering van halal gevogelte en vlees aan professionele klanten.
@@ -571,43 +589,29 @@ input,select,textarea{
 
 <section id="proces" class="process">
   <h2>Onze werkwijze</h2>
-  <p class="section-intro">
-    Transparant, snel en gericht op resultaat. Zo werken wij met onze klanten.
-  </p>
+  <p class="section-intro">Snel schakelen, duidelijke afspraken en leveren volgens de behoefte van de klant.</p>
 
   <div class="process-grid">
-
     <div class="video-box">
-      <iframe width="100%" height="350"
-        src="https://www.youtube.com/embed/7z0QnU3y6nA"
-        title="ARAV Meat Process"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+      <div class="play">▶</div>
     </div>
 
     <div class="steps">
       <div class="step">
         <h3>1. Aanvraag</h3>
-        <p>Stuur via WhatsApp of het formulier jouw product, volume en wensen.</p>
+        <p>Stuur via WhatsApp of formulier jouw product, volume en leverwens.</p>
       </div>
 
       <div class="step">
         <h3>2. Prijs & beschikbaarheid</h3>
-        <p>Wij checken direct de markt en geven een scherpe prijs terug.</p>
+        <p>Wij controleren beschikbaarheid en sturen een duidelijke prijsindicatie.</p>
       </div>
 
       <div class="step">
         <h3>3. Levering</h3>
-        <p>Snelle levering in Nederland, België en Duitsland.</p>
-      </div>
-
-      <div class="step">
-        <h3>4. Herhaal & schaal</h3>
-        <p>Voor vaste klanten bouwen we structurele leveringen op.</p>
+        <p>Levering mogelijk in Nederland, België en Duitsland.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -715,69 +719,20 @@ input,select,textarea{
   </form>
 </section>
 
-<section id="contact" class="contact-section">
-  <h2>Contact & samenwerking</h2>
+<section id="contact">
+  <h2>Contact</h2>
 
-  <div class="contact-grid">
-    <div class="contact-box">
-      <h3>Direct contact</h3>
-      <p><strong>Telefoon:</strong> +31 (0)6 19 59 86 66</p>
-      <p><strong>E-mail:</strong> info@aravmeat.com</p>
-      <p><strong>Bereikbaar:</strong> 7 dagen per week</p>
+  <div class="contact-card">
+    <p><strong>Telefoon:</strong> +31 (0)6 19 59 86 66</p>
+    <p><strong>E-mail:</strong> info@aravmeat.com</p>
+    <p><strong>Levering:</strong> Nederland, België & Duitsland</p>
 
-      <a class="btn" href="https://wa.me/31619598666" target="_blank">
-        Start WhatsApp gesprek
-      </a>
-    </div>
-
-    <div class="contact-box">
-      <h3>Leveringsgebied</h3>
-      <p>Nederland</p>
-      <p>België</p>
-      <p>Duitsland</p>
-
-      <p style="margin-top:20px;">
-        Levering mogelijk op aanvraag en volume.
-      </p>
-    </div>
-
-    <div class="contact-box">
-      <h3>ARAV MEATGROUP</h3>
-      <p>Halal gevogelte en vlees</p>
-      <p>B2B leverancier</p>
-      <p>Groothandel & distributie</p>
-
-      <p style="margin-top:20px;">
-        Betrouwbare partner voor professionele klanten.
-      </p>
-    </div>
+    <a class="btn" href="mailto:info@aravmeat.com">Stuur een e-mail</a>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>ARAV MEATGROUP</h4>
-      <p>Fresh Quality & Trust</p>
-    </div>
-
-    <div>
-      <h4>Menu</h4>
-      <p>Producten</p>
-      <p>Werkwijze</p>
-      <p>Offerte</p>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>+31 (0)6 19 59 86 66</p>
-      <p>info@aravmeat.com</p>
-    </div>
-  </div>
-
-  <p class="copyright">
-    © 2026 ARAV MEATGROUP — Alle rechten voorbehouden
-  </p>
+<footer>
+  © 2026 ARAV MEATGROUP — Fresh Quality & Trust
 </footer>
 
 <a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP" target="_blank">
