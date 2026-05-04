@@ -17,6 +17,7 @@ body {
 header {
   display:flex;
   align-items:center;
+  justify-content:space-between;
   padding:40px 80px;
   border-bottom:1px solid #eee;
 }
@@ -28,7 +29,7 @@ header {
 }
 
 .logo img {
-  width:240px; /* GROTER */
+  width:220px;
 }
 
 .logo-text {
@@ -37,7 +38,7 @@ header {
 }
 
 .logo-text .main {
-  font-size:28px; /* GROTER */
+  font-size:28px;
   font-weight:800;
   color:#7A0000;
 }
@@ -55,7 +56,7 @@ header {
 .hero h2 {
   font-size:56px;
   margin-bottom:20px;
-  max-width:800px;
+  max-width:900px;
 }
 
 .hero p {
@@ -79,6 +80,52 @@ header {
 .btn:hover {
   background:#5D0000;
 }
+
+/* PRODUCTS */
+.products {
+  padding:100px 80px;
+  background:#f9f9f9;
+}
+
+.products h3 {
+  font-size:36px;
+  margin-bottom:30px;
+}
+
+.product-list {
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.product {
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  border:1px solid #eee;
+  width:250px;
+}
+
+.product h4 {
+  margin-bottom:10px;
+}
+
+/* HALAL */
+.halal {
+  padding:80px;
+  text-align:center;
+}
+
+.halal h3 {
+  color:#7A0000;
+  font-size:28px;
+}
+
+/* CONTACT */
+.contact {
+  padding:100px 80px;
+}
+
 </style>
 </head>
 
@@ -95,9 +142,46 @@ header {
 </header>
 
 <section class="hero">
-  <h2>Betrouwbare leverancier van kip en kalkoen voor horeca en groothandel</h2>
-  <p>Snelle levering, scherpe prijzen en constante kwaliteit voor jouw business.</p>
+  <h2>Premium leverancier van halal gevogelte (kip, kalkoen & eend) en vlees</h2>
+  <p>Voor horeca, retail en groothandel. Snelle levering en scherpe prijzen.</p>
   <a class="btn" href="#">Vraag direct prijs aan</a>
+</section>
+
+<section class="products">
+  <h3>Onze producten</h3>
+
+  <div class="product-list">
+    <div class="product">
+      <h4>Kip</h4>
+      <p>Vers en diepvries beschikbaar</p>
+    </div>
+
+    <div class="product">
+      <h4>Kalkoen</h4>
+      <p>Hoogwaardige kwaliteit</p>
+    </div>
+
+    <div class="product">
+      <h4>Eend</h4>
+      <p>Geschikt voor horeca en export</p>
+    </div>
+
+    <div class="product">
+      <h4>Vlees</h4>
+      <p>Breed assortiment</p>
+    </div>
+  </div>
+</section>
+
+<section class="halal">
+  <h3>100% HALAL gecertificeerd</h3>
+  <p>Al onze producten voldoen aan de halal eisen en kwaliteitsnormen.</p>
+</section>
+
+<section class="contact">
+  <h3>Contact</h3>
+  <p>📞 +31 (0)6 19 59 86 66</p>
+  <p>📧 info@aravmeat.com</p>
 </section>
 
 </body>
