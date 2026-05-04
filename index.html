@@ -23,6 +23,7 @@ body{
   font-family:Arial, Helvetica, sans-serif;
   color:var(--black);
   background:white;
+  padding-bottom:50px;
 }
 
 header{
@@ -135,13 +136,11 @@ nav a:hover{
   font-size:58px;
   line-height:1.04;
   margin:0 0 22px;
-  max-width:900px;
 }
 
 .hero p{
   font-size:22px;
   color:#444;
-  max-width:760px;
 }
 
 .hero-image{
@@ -166,7 +165,6 @@ nav a:hover{
   margin-top:30px;
   border:none;
   cursor:pointer;
-  font-size:15px;
 }
 
 .btn:hover{
@@ -205,7 +203,8 @@ h2{
   margin-bottom:38px;
 }
 
-.about-grid{
+.about-grid,
+.process-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:35px;
@@ -252,15 +251,7 @@ h2{
   margin-top:0;
 }
 
-.process-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-}
-
 .video-box{
-  min-height:360px;
   border-radius:28px;
   overflow:hidden;
   box-shadow:0 20px 50px rgba(0,0,0,.15);
@@ -367,50 +358,73 @@ input,select,textarea{
 }
 
 .contact-section{
-  background:white;
+  background:#111;
+  color:white;
+}
+
+.contact-section .section-intro{
+  color:#ddd;
 }
 
 .contact-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1.2fr 1fr 1fr;
   gap:25px;
 }
 
 .contact-box{
-  background:#fafafa;
-  border:1px solid #eee;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  background:#1b1b1b;
+  border:1px solid #333;
+  border-radius:24px;
+  padding:34px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+.contact-box h3{
+  color:var(--gold);
+  margin-top:0;
+}
+
+.contact-box p{
+  color:#ddd;
 }
 
 .contact-box.highlight{
   border:2px solid var(--gold);
+  background:linear-gradient(140deg,#1b1b1b,#2a1515);
 }
 
 .footer{
-  background:#111;
+  background:#080808;
   color:white;
-  padding:50px 80px;
+  padding:55px 80px 30px;
 }
 
 .footer-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-  margin-bottom:30px;
+  grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:35px;
+  margin-bottom:35px;
 }
 
 .footer h4{
-  margin-bottom:10px;
+  color:var(--gold);
+  margin-bottom:12px;
 }
 
 .footer p{
-  color:#ccc;
-  margin:4px 0;
+  color:#bbb;
+  margin:6px 0;
+}
+
+.footer-logo{
+  width:160px;
+  margin-bottom:15px;
 }
 
 .copyright{
+  border-top:1px solid #222;
+  padding-top:20px;
   text-align:center;
   font-size:12px;
   color:#777;
@@ -419,7 +433,7 @@ input,select,textarea{
 .whatsapp{
   position:fixed;
   right:24px;
-  bottom:24px;
+  bottom:70px;
   background:#25D366;
   color:white;
   padding:16px 25px;
@@ -707,6 +721,7 @@ input,select,textarea{
 
   <form class="quote-form" action="https://formspree.io/f/xaqvoyjk" method="POST">
     <input type="hidden" name="_subject" value="Nieuwe offerte aanvraag via ARAV MEATGROUP website">
+    <input type="hidden" name="_next" value="https://arav-website-git-main-solvego-4710s-projects.vercel.app/bedankt.html">
 
     <div class="form-grid">
       <div class="form-group">
@@ -771,7 +786,9 @@ input,select,textarea{
       <p><strong>E-mail:</strong> info@aravmeat.com</p>
       <p><strong>Bereikbaar:</strong> 7 dagen per week</p>
 
-      <a class="btn" href="https://wa.me/31619598666" target="_blank">Start WhatsApp gesprek</a>
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20ben%20geïnteresseerd%20in%20prijzen.%20Kunt%20u%20mij%20meer%20informatie%20sturen?" target="_blank">
+        Start WhatsApp gesprek
+      </a>
     </div>
 
     <div class="contact-box">
@@ -795,12 +812,13 @@ input,select,textarea{
 <footer class="footer">
   <div class="footer-grid">
     <div>
-      <h4>ARAV MEATGROUP</h4>
+      <img class="footer-logo" src="arav-logo.jpg" alt="ARAV MEATGROUP">
       <p>Fresh Quality & Trust</p>
+      <p>Premium halal leverancier voor professionele klanten.</p>
     </div>
 
     <div>
-      <h4>Menu</h4>
+      <h4>Website</h4>
       <p>Over ons</p>
       <p>Producten</p>
       <p>Werkwijze</p>
@@ -808,16 +826,25 @@ input,select,textarea{
     </div>
 
     <div>
+      <h4>Levering</h4>
+      <p>Nederland</p>
+      <p>België</p>
+      <p>Duitsland</p>
+      <p>B2B volumes</p>
+    </div>
+
+    <div>
       <h4>Contact</h4>
       <p>+31 (0)6 19 59 86 66</p>
       <p>info@aravmeat.com</p>
+      <p>WhatsApp direct beschikbaar</p>
     </div>
   </div>
 
   <p class="copyright">© 2026 ARAV MEATGROUP — Alle rechten voorbehouden</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP" target="_blank">
+<a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20ben%20geïnteresseerd%20in%20prijzen.%20Kunt%20u%20mij%20meer%20informatie%20sturen?" target="_blank">
   WhatsApp
 </a>
 
