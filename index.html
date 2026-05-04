@@ -22,36 +22,68 @@ body {
   color:var(--black);
 }
 
-/* HEADER */
+/* TOP BAR */
 header {
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:25px 80px;
+  justify-content:space-between;
+  padding:22px 70px;
   border-bottom:1px solid #eee;
+  background:white;
 }
 
-.logo img {
-  width:220px;
+.logo-area {
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.logo-area img {
+  width:210px;
+  height:auto;
+}
+
+.brand-line {
+  border-left:3px solid var(--gold);
+  padding-left:18px;
+}
+
+.brand-line .main {
+  font-size:22px;
+  font-weight:900;
+  color:var(--red);
+}
+
+.brand-line .sub {
+  font-size:14px;
+  color:var(--grey);
+  margin-top:4px;
 }
 
 /* MENU */
+.menu-area {
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
 nav {
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   background:#fafafa;
+  border:1px solid #eee;
   padding:8px;
   border-radius:50px;
-  border:1px solid #eee;
 }
 
 nav a {
   text-decoration:none;
-  padding:10px 16px;
-  font-weight:700;
   color:#111;
-  border-radius:30px;
+  font-weight:800;
+  font-size:14px;
+  padding:11px 17px;
+  border-radius:40px;
 }
 
 nav a:hover {
@@ -62,100 +94,215 @@ nav a:hover {
 /* FLAGS */
 .lang {
   display:flex;
-  gap:6px;
-  padding-left:10px;
-  border-left:1px solid #ddd;
+  align-items:center;
+  gap:7px;
+  background:#fafafa;
+  border:1px solid #eee;
+  padding:8px 10px;
+  border-radius:50px;
 }
 
 .lang button {
   border:none;
   background:white;
   cursor:pointer;
-  font-size:18px;
-  padding:8px;
+  font-size:20px;
+  width:36px;
+  height:36px;
   border-radius:50%;
   transition:0.2s;
 }
 
 .lang button:hover {
-  background:#f3f3f3;
-  transform:scale(1.1);
+  background:var(--cream);
+  transform:scale(1.12);
 }
 
 /* HERO */
 .hero {
-  padding:110px 80px;
-  background:linear-gradient(120deg,#fff,#f6f1e8);
+  padding:115px 80px;
+  background:
+    radial-gradient(circle at top right, rgba(122,0,0,0.10), transparent 35%),
+    linear-gradient(120deg,#fff,var(--cream));
+}
+
+.hero-label {
+  display:inline-block;
+  background:white;
+  border:1px solid rgba(212,175,55,0.45);
+  color:var(--red);
+  font-weight:900;
+  padding:10px 18px;
+  border-radius:50px;
+  margin-bottom:25px;
 }
 
 .hero h1 {
-  font-size:56px;
-  max-width:900px;
+  font-size:60px;
+  line-height:1.04;
+  max-width:1050px;
+  margin:0 0 25px;
 }
 
 .hero p {
-  font-size:22px;
+  font-size:23px;
+  color:#444;
+  max-width:800px;
 }
 
 .btn {
-  margin-top:30px;
+  display:inline-block;
   background:var(--red);
   color:white;
-  padding:16px 30px;
-  border-radius:8px;
   text-decoration:none;
-  font-weight:800;
-  display:inline-block;
+  font-weight:900;
+  padding:18px 38px;
+  border-radius:12px;
+  margin-top:35px;
+}
+
+.btn:hover {
+  background:var(--red-dark);
 }
 
 .trust {
   display:flex;
-  gap:20px;
-  margin-top:30px;
   flex-wrap:wrap;
+  gap:18px;
+  margin-top:45px;
 }
 
-/* PRODUCTS */
-.products {
-  padding:80px;
+.trust div {
+  background:white;
+  border:1px solid #eee;
+  padding:17px 24px;
+  border-radius:14px;
+  font-weight:900;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* SECTIONS */
+section {
+  padding:95px 80px;
+}
+
+h2 {
+  font-size:42px;
+  margin:0 0 35px;
 }
 
 .product-list {
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  gap:25px;
 }
 
 .product {
-  padding:25px;
+  background:#fafafa;
   border:1px solid #eee;
-  border-radius:12px;
+  border-radius:20px;
+  padding:34px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.035);
 }
 
-/* HALAL */
+.product h3 {
+  color:var(--red);
+  font-size:25px;
+}
+
+.quality {
+  background:#f9f9f9;
+}
+
+.quality-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.quality-box {
+  background:white;
+  border:1px solid #eee;
+  border-radius:20px;
+  padding:34px;
+}
+
+.quality-box h3 {
+  color:var(--red);
+}
+
 .halal {
-  background:var(--red);
+  background:linear-gradient(120deg,var(--red-dark),var(--red));
   color:white;
   text-align:center;
-  padding:60px;
 }
 
-/* CONTACT */
-.contact {
-  padding:80px;
+.contact-card {
+  max-width:680px;
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:20px;
+  padding:35px;
 }
 
-/* WHATSAPP */
 .whatsapp {
   position:fixed;
-  right:20px;
-  bottom:20px;
+  right:25px;
+  bottom:25px;
   background:#25D366;
   color:white;
-  padding:15px 20px;
+  padding:16px 25px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:800;
+  font-weight:900;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+footer {
+  background:#111;
+  color:white;
+  padding:32px 80px;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+  header {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:22px;
+  }
+
+  .menu-area {
+    margin-top:20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav {
+    flex-wrap:wrap;
+    border-radius:18px;
+  }
+
+  .logo-area img {
+    width:180px;
+  }
+
+  .brand-line .main {
+    font-size:19px;
+  }
+
+  .hero, section {
+    padding:60px 24px;
+  }
+
+  .hero h1 {
+    font-size:38px;
+  }
+
+  .product-list,
+  .quality-grid {
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -163,30 +310,42 @@ nav a:hover {
 <body>
 
 <header>
-  <div class="logo">
-    <img src="arav-logo.jpg">
+  <div class="logo-area">
+    <img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
+    <div class="brand-line">
+      <div class="main">Premium Poultry & Meat Supplier</div>
+      <div class="sub">Fresh Quality & Trust</div>
+    </div>
   </div>
 
-  <nav>
-    <a href="#producten" id="navProducts">Producten</a>
-    <a href="#contact" id="navContact">Contact</a>
+  <div class="menu-area">
+    <nav>
+      <a href="#producten" id="navProducts">Producten</a>
+      <a href="#kwaliteit" id="navQuality">Kwaliteit</a>
+      <a href="#halal" id="navHalal">Halal</a>
+      <a href="#contact" id="navContact">Contact</a>
+    </nav>
 
     <div class="lang">
-      <button onclick="setLang('nl')">🇳🇱</button>
-      <button onclick="setLang('en')">🇬🇧</button>
-      <button onclick="setLang('pl')">🇵🇱</button>
-      <button onclick="setLang('ar')">🇸🇦</button>
-      <button onclick="setLang('fr')">🇫🇷</button>
-      <button onclick="setLang('de')">🇩🇪</button>
+      <button onclick="setLang('nl')" title="Nederlands">🇳🇱</button>
+      <button onclick="setLang('en')" title="English">🇬🇧</button>
+      <button onclick="setLang('pl')" title="Polski">🇵🇱</button>
+      <button onclick="setLang('ar')" title="Arabic">🇸🇦</button>
+      <button onclick="setLang('fr')" title="Français">🇫🇷</button>
+      <button onclick="setLang('de')" title="Deutsch">🇩🇪</button>
     </div>
-  </nav>
+  </div>
 </header>
 
 <section class="hero">
-  <h1 id="title">Halal gevogelte en vlees tegen scherpe groothandelsprijzen</h1>
-  <p id="subtitle">Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit.</p>
+  <div class="hero-label" id="heroLabel">100% HALAL • B2B SUPPLY</div>
 
-  <a class="btn" id="cta" href="#">Vraag prijs aan</a>
+  <h1 id="title">Halal gevogelte en vlees tegen scherpe groothandelsprijzen.</h1>
+  <p id="subtitle">Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit voor horeca, retail en groothandel.</p>
+
+  <a class="btn" id="cta" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP%2C%20ik%20wil%20graag%20meer%20informatie%20ontvangen%20over%20jullie%20producten%20en%20prijzen." target="_blank">
+    Vraag direct een scherpe prijs aan
+  </a>
 
   <div class="trust">
     <div id="t1">✔ 100% HALAL</div>
@@ -196,86 +355,177 @@ nav a:hover {
   </div>
 </section>
 
-<section id="producten" class="products">
+<section id="producten">
   <h2 id="productsTitle">Onze producten</h2>
 
   <div class="product-list">
-    <div class="product" id="p1">Kip</div>
-    <div class="product" id="p2">Kalkoen</div>
-    <div class="product" id="p3">Eend</div>
-    <div class="product" id="p4">Vlees</div>
+    <div class="product"><h3 id="p1">Kip</h3><p id="p1text">Verse en diepvries kipproducten voor horeca, retail en groothandel.</p></div>
+    <div class="product"><h3 id="p2">Kalkoen</h3><p id="p2text">Hoogwaardige kalkoenproducten voor professionele afnemers.</p></div>
+    <div class="product"><h3 id="p3">Eend</h3><p id="p3text">Eendproducten voor horeca, speciaalzaken en B2B-klanten.</p></div>
+    <div class="product"><h3 id="p4">Vlees</h3><p id="p4text">Halal vleesproducten op aanvraag en volgens beschikbare specificaties.</p></div>
   </div>
 </section>
 
-<section class="halal">
-  <h2>100% HALAL</h2>
+<section id="kwaliteit" class="quality">
+  <h2 id="qualityTitle">Kwaliteit & betrouwbaarheid</h2>
+
+  <div class="quality-grid">
+    <div class="quality-box"><h3 id="q1">Constante kwaliteit</h3><p id="q1text">Wij richten ons op betrouwbare producten met duidelijke specificaties.</p></div>
+    <div class="quality-box"><h3 id="q2">Snelle communicatie</h3><p id="q2text">Direct contact via WhatsApp voor prijzen, volumes en beschikbaarheid.</p></div>
+    <div class="quality-box"><h3 id="q3">B2B service</h3><p id="q3text">Geschikt voor horeca, toko’s, supermarkten, retail en groothandel.</p></div>
+  </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="halal" class="halal">
+  <h2 id="halalTitle">100% HALAL</h2>
+  <p id="halalText">Onze producten worden geleverd met focus op halal kwaliteit, vertrouwen en professionele afhandeling.</p>
+</section>
+
+<section id="contact">
   <h2 id="contactTitle">Contact</h2>
-  <p>📞 +31 6 19 59 86 66</p>
-  <p>📧 info@aravmeat.com</p>
-  <p><strong>Levering:</strong> Nederland, België & Duitsland</p>
+
+  <div class="contact-card">
+    <p><strong>Telefoon:</strong> +31 (0)6 19 59 86 66</p>
+    <p><strong>E-mail:</strong> info@aravmeat.com</p>
+    <p><strong id="deliveryLabel">Levering:</strong> <span id="deliveryText">Nederland, België & Duitsland</span></p>
+
+    <a class="btn" href="mailto:info@aravmeat.com" id="mailBtn">Stuur een e-mail</a>
+  </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/31619598666" target="_blank">
+<footer>
+  © 2026 ARAV MEATGROUP — Fresh Quality & Trust
+</footer>
+
+<a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP" target="_blank">
   WhatsApp
 </a>
 
 <script>
 const translations = {
 nl:{
-title:"Halal gevogelte en vlees tegen scherpe groothandelsprijzen",
-subtitle:"Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit.",
-cta:"Vraag prijs aan",
-products:"Onze producten",
-contact:"Contact",
-navProducts:"Producten",
-navContact:"Contact",
-p1:"Kip",p2:"Kalkoen",p3:"Eend",p4:"Vlees",
-t1:"✔ 100% HALAL",
-t2:"✔ Levering NL / BE / DE",
-t3:"✔ B2B volumes",
-t4:"✔ Vers & diepvries"
+navProducts:"Producten",navQuality:"Kwaliteit",navHalal:"Halal",navContact:"Contact",
+heroLabel:"100% HALAL • B2B SUPPLY",
+title:"Halal gevogelte en vlees tegen scherpe groothandelsprijzen.",
+subtitle:"Snelle levering. Direct beschikbaar. Betrouwbare kwaliteit voor horeca, retail en groothandel.",
+cta:"Vraag direct een scherpe prijs aan",
+t1:"✔ 100% HALAL",t2:"✔ Levering NL / BE / DE",t3:"✔ B2B volumes",t4:"✔ Vers & diepvries",
+productsTitle:"Onze producten",
+p1:"Kip",p1text:"Verse en diepvries kipproducten voor horeca, retail en groothandel.",
+p2:"Kalkoen",p2text:"Hoogwaardige kalkoenproducten voor professionele afnemers.",
+p3:"Eend",p3text:"Eendproducten voor horeca, speciaalzaken en B2B-klanten.",
+p4:"Vlees",p4text:"Halal vleesproducten op aanvraag en volgens beschikbare specificaties.",
+qualityTitle:"Kwaliteit & betrouwbaarheid",
+q1:"Constante kwaliteit",q1text:"Wij richten ons op betrouwbare producten met duidelijke specificaties.",
+q2:"Snelle communicatie",q2text:"Direct contact via WhatsApp voor prijzen, volumes en beschikbaarheid.",
+q3:"B2B service",q3text:"Geschikt voor horeca, toko’s, supermarkten, retail en groothandel.",
+halalTitle:"100% HALAL",halalText:"Onze producten worden geleverd met focus op halal kwaliteit, vertrouwen en professionele afhandeling.",
+contactTitle:"Contact",deliveryLabel:"Levering:",deliveryText:"Nederland, België & Duitsland",mailBtn:"Stuur een e-mail"
 },
 en:{
-title:"Halal poultry and meat at competitive wholesale prices",
-subtitle:"Fast delivery. Direct availability. Reliable quality.",
-cta:"Request quote",
-products:"Our products",
-contact:"Contact",
-navProducts:"Products",
-navContact:"Contact",
-p1:"Chicken",p2:"Turkey",p3:"Duck",p4:"Meat",
-t1:"✔ 100% HALAL",
-t2:"✔ Delivery NL / BE / DE",
-t3:"✔ B2B volumes",
-t4:"✔ Fresh & frozen"
+navProducts:"Products",navQuality:"Quality",navHalal:"Halal",navContact:"Contact",
+heroLabel:"100% HALAL • B2B SUPPLY",
+title:"Halal poultry and meat at competitive wholesale prices.",
+subtitle:"Fast delivery. Direct availability. Reliable quality for restaurants, retail and wholesale.",
+cta:"Request a competitive quote",
+t1:"✔ 100% HALAL",t2:"✔ Delivery NL / BE / DE",t3:"✔ B2B volumes",t4:"✔ Fresh & frozen",
+productsTitle:"Our products",
+p1:"Chicken",p1text:"Fresh and frozen chicken products for restaurants, retail and wholesale.",
+p2:"Turkey",p2text:"High-quality turkey products for professional buyers.",
+p3:"Duck",p3text:"Duck products for restaurants, specialty stores and B2B customers.",
+p4:"Meat",p4text:"Halal meat products on request and according to available specifications.",
+qualityTitle:"Quality & reliability",
+q1:"Consistent quality",q1text:"We focus on reliable products with clear specifications.",
+q2:"Fast communication",q2text:"Direct WhatsApp contact for prices, volumes and availability.",
+q3:"B2B service",q3text:"Suitable for restaurants, stores, supermarkets, retail and wholesale.",
+halalTitle:"100% HALAL",halalText:"Our products are supplied with focus on halal quality, trust and professional handling.",
+contactTitle:"Contact",deliveryLabel:"Delivery:",deliveryText:"Netherlands, Belgium & Germany",mailBtn:"Send an e-mail"
+},
+pl:{
+navProducts:"Produkty",navQuality:"Jakość",navHalal:"Halal",navContact:"Kontakt",
+heroLabel:"100% HALAL • DOSTAWY B2B",
+title:"Halalowy drób i mięso w konkurencyjnych cenach hurtowych.",
+subtitle:"Szybka dostawa. Dostępność od ręki. Niezawodna jakość dla gastronomii, retailu i hurtowni.",
+cta:"Zapytaj o cenę hurtową",
+t1:"✔ 100% HALAL",t2:"✔ Dostawa NL / BE / DE",t3:"✔ Wolumeny B2B",t4:"✔ Świeże i mrożone",
+productsTitle:"Nasze produkty",
+p1:"Kurczak",p1text:"Świeże i mrożone produkty z kurczaka dla gastronomii, retailu i hurtowni.",
+p2:"Indyk",p2text:"Wysokiej jakości produkty z indyka dla profesjonalnych odbiorców.",
+p3:"Kaczka",p3text:"Produkty z kaczki dla gastronomii, sklepów specjalistycznych i klientów B2B.",
+p4:"Mięso",p4text:"Produkty mięsne halal na zapytanie i według dostępnej specyfikacji.",
+qualityTitle:"Jakość i niezawodność",
+q1:"Stała jakość",q1text:"Koncentrujemy się na niezawodnych produktach z jasną specyfikacją.",
+q2:"Szybka komunikacja",q2text:"Bezpośredni kontakt WhatsApp w sprawie cen, wolumenów i dostępności.",
+q3:"Obsługa B2B",q3text:"Dla gastronomii, sklepów, supermarketów, retailu i hurtowni.",
+halalTitle:"100% HALAL",halalText:"Nasze produkty dostarczamy z naciskiem na jakość halal, zaufanie i profesjonalną obsługę.",
+contactTitle:"Kontakt",deliveryLabel:"Dostawa:",deliveryText:"Holandia, Belgia i Niemcy",mailBtn:"Wyślij e-mail"
+},
+ar:{
+navProducts:"المنتجات",navQuality:"الجودة",navHalal:"حلال",navContact:"اتصال",
+heroLabel:"حلال 100% • توريد B2B",
+title:"دواجن ولحوم حلال بأسعار جملة تنافسية.",
+subtitle:"توصيل سريع. توفر مباشر. جودة موثوقة للمطاعم والتجزئة وتجارة الجملة.",
+cta:"اطلب سعرًا تنافسيًا",
+t1:"✔ حلال 100%",t2:"✔ توصيل NL / BE / DE",t3:"✔ كميات تجارية B2B",t4:"✔ طازج ومجمد",
+productsTitle:"منتجاتنا",
+p1:"دجاج",p1text:"منتجات دجاج طازجة ومجمدة للمطاعم والتجزئة وتجارة الجملة.",
+p2:"ديك رومي",p2text:"منتجات ديك رومي عالية الجودة للمشترين المحترفين.",
+p3:"بط",p3text:"منتجات بط للمطاعم والمتاجر المتخصصة وعملاء B2B.",
+p4:"لحوم",p4text:"منتجات لحوم حلال حسب الطلب والمواصفات المتاحة.",
+qualityTitle:"الجودة والموثوقية",
+q1:"جودة ثابتة",q1text:"نركز على منتجات موثوقة بمواصفات واضحة.",
+q2:"تواصل سريع",q2text:"تواصل مباشر عبر واتساب للأسعار والكميات والتوفر.",
+q3:"خدمة B2B",q3text:"مناسب للمطاعم والمتاجر والسوبرماركت والتجزئة والجملة.",
+halalTitle:"حلال 100%",halalText:"يتم توريد منتجاتنا مع التركيز على جودة الحلال والثقة والتعامل المهني.",
+contactTitle:"اتصال",deliveryLabel:"التوصيل:",deliveryText:"هولندا، بلجيكا وألمانيا",mailBtn:"إرسال بريد إلكتروني"
+},
+fr:{
+navProducts:"Produits",navQuality:"Qualité",navHalal:"Halal",navContact:"Contact",
+heroLabel:"100% HALAL • FOURNITURE B2B",
+title:"Volaille et viande halal à des prix de gros compétitifs.",
+subtitle:"Livraison rapide. Disponibilité immédiate. Qualité fiable pour horeca, retail et grossistes.",
+cta:"Demander un prix compétitif",
+t1:"✔ 100% HALAL",t2:"✔ Livraison NL / BE / DE",t3:"✔ Volumes B2B",t4:"✔ Frais et congelé",
+productsTitle:"Nos produits",
+p1:"Poulet",p1text:"Produits de poulet frais et congelés pour horeca, retail et grossistes.",
+p2:"Dinde",p2text:"Produits de dinde de qualité pour acheteurs professionnels.",
+p3:"Canard",p3text:"Produits de canard pour restaurants, magasins spécialisés et clients B2B.",
+p4:"Viande",p4text:"Produits carnés halal sur demande et selon spécifications disponibles.",
+qualityTitle:"Qualité & fiabilité",
+q1:"Qualité constante",q1text:"Nous nous concentrons sur des produits fiables avec des spécifications claires.",
+q2:"Communication rapide",q2text:"Contact WhatsApp direct pour prix, volumes et disponibilité.",
+q3:"Service B2B",q3text:"Adapté aux restaurants, magasins, supermarchés, retail et grossistes.",
+halalTitle:"100% HALAL",halalText:"Nos produits sont livrés avec un focus sur la qualité halal, la confiance et le traitement professionnel.",
+contactTitle:"Contact",deliveryLabel:"Livraison:",deliveryText:"Pays-Bas, Belgique et Allemagne",mailBtn:"Envoyer un e-mail"
+},
+de:{
+navProducts:"Produkte",navQuality:"Qualität",navHalal:"Halal",navContact:"Kontakt",
+heroLabel:"100% HALAL • B2B LIEFERUNG",
+title:"Halal-Geflügel und Fleisch zu wettbewerbsfähigen Großhandelspreisen.",
+subtitle:"Schnelle Lieferung. Direkt verfügbar. Zuverlässige Qualität für Gastronomie, Retail und Großhandel.",
+cta:"Wettbewerbsfähigen Preis anfragen",
+t1:"✔ 100% HALAL",t2:"✔ Lieferung NL / BE / DE",t3:"✔ B2B Mengen",t4:"✔ Frisch & gefroren",
+productsTitle:"Unsere Produkte",
+p1:"Hähnchen",p1text:"Frische und gefrorene Hähnchenprodukte für Gastronomie, Retail und Großhandel.",
+p2:"Pute",p2text:"Hochwertige Putenprodukte für professionelle Einkäufer.",
+p3:"Ente",p3text:"Entenprodukte für Restaurants, Fachgeschäfte und B2B-Kunden.",
+p4:"Fleisch",p4text:"Halal-Fleischprodukte auf Anfrage und nach verfügbaren Spezifikationen.",
+qualityTitle:"Qualität & Zuverlässigkeit",
+q1:"Konstante Qualität",q1text:"Wir konzentrieren uns auf zuverlässige Produkte mit klaren Spezifikationen.",
+q2:"Schnelle Kommunikation",q2text:"Direkter WhatsApp-Kontakt für Preise, Mengen und Verfügbarkeit.",
+q3:"B2B Service",q3text:"Geeignet für Gastronomie, Geschäfte, Supermärkte, Retail und Großhandel.",
+halalTitle:"100% HALAL",halalText:"Unsere Produkte werden mit Fokus auf Halal-Qualität, Vertrauen und professionelle Abwicklung geliefert.",
+contactTitle:"Kontakt",deliveryLabel:"Lieferung:",deliveryText:"Niederlande, Belgien und Deutschland",mailBtn:"E-Mail senden"
 }
 };
 
 function setLang(lang){
-document.getElementById("title").innerText = translations[lang].title;
-document.getElementById("subtitle").innerText = translations[lang].subtitle;
-document.getElementById("cta").innerText = translations[lang].cta;
-document.getElementById("productsTitle").innerText = translations[lang].products;
-document.getElementById("contactTitle").innerText = translations[lang].contact;
-document.getElementById("navProducts").innerText = translations[lang].navProducts;
-document.getElementById("navContact").innerText = translations[lang].navContact;
-document.getElementById("p1").innerText = translations[lang].p1;
-document.getElementById("p2").innerText = translations[lang].p2;
-document.getElementById("p3").innerText = translations[lang].p3;
-document.getElementById("p4").innerText = translations[lang].p4;
-document.getElementById("t1").innerText = translations[lang].t1;
-document.getElementById("t2").innerText = translations[lang].t2;
-document.getElementById("t3").innerText = translations[lang].t3;
-document.getElementById("t4").innerText = translations[lang].t4;
-
-if(lang==="ar"){
-document.body.style.direction="rtl";
-}else{
-document.body.style.direction="ltr";
-}
+  const t = translations[lang];
+  Object.keys(t).forEach(key => {
+    const el = document.getElementById(key);
+    if(el) el.innerText = t[key];
+  });
+  document.body.style.direction = lang === "ar" ? "rtl" : "ltr";
 }
 </script>
 
