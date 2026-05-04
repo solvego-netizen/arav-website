@@ -13,26 +13,26 @@ body {
   color:#111;
 }
 
-/* HEADER */
 header {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:30px 80px;
+  padding:26px 80px;
   border-bottom:1px solid #eee;
   background:white;
   position:sticky;
   top:0;
+  z-index:100;
 }
 
 .logo {
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:24px;
 }
 
 .logo img {
-  width:230px;
+  width:235px;
 }
 
 .logo-text .main {
@@ -46,46 +46,68 @@ header {
   color:#777;
 }
 
+/* NETTER MENU */
+nav {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#fafafa;
+  padding:8px;
+  border-radius:50px;
+  border:1px solid #eee;
+}
+
 nav a {
-  margin-left:25px;
   text-decoration:none;
   color:#111;
   font-weight:700;
+  font-size:14px;
+  padding:12px 18px;
+  border-radius:40px;
+  transition:0.2s;
 }
 
 nav a:hover {
-  color:#7A0000;
+  background:#7A0000;
+  color:white;
+}
+
+.nav-whatsapp {
+  background:#7A0000;
+  color:white !important;
 }
 
 /* HERO */
 .hero {
-  padding:110px 80px;
-  background:linear-gradient(90deg,#fff 0%,#f8f3ea 100%);
+  padding:115px 80px;
+  background:linear-gradient(120deg,#fff 0%,#f8f3ea 100%);
 }
 
 .hero h1 {
-  font-size:58px;
-  max-width:900px;
-  margin-bottom:20px;
+  font-size:60px;
+  line-height:1.05;
+  max-width:980px;
+  margin:0 0 25px;
+  letter-spacing:-1px;
 }
 
 .hero p {
   font-size:22px;
   color:#444;
-  margin-bottom:25px;
+  margin-bottom:35px;
 }
 
 .hero-strong {
-  font-weight:700;
+  font-weight:800;
   color:#7A0000;
 }
 
 .btn {
   background:#7A0000;
-  padding:18px 35px;
+  padding:18px 36px;
   color:white;
   text-decoration:none;
-  border-radius:8px;
+  border-radius:10px;
   font-weight:800;
   display:inline-block;
 }
@@ -94,63 +116,100 @@ nav a:hover {
   background:#5D0000;
 }
 
-/* TRUST BAR */
 .trustbar {
   display:flex;
-  gap:20px;
+  gap:18px;
   flex-wrap:wrap;
-  margin-top:40px;
+  margin-top:42px;
 }
 
 .trust-item {
   background:white;
   border:1px solid #eee;
-  padding:15px 20px;
-  border-radius:10px;
-  font-weight:700;
+  padding:16px 22px;
+  border-radius:12px;
+  font-weight:800;
+  box-shadow:0 8px 25px rgba(0,0,0,0.04);
 }
 
-/* PRODUCTS */
+/* SECTIONS */
+section {
+  padding:95px 80px;
+}
+
+h2 {
+  font-size:42px;
+  margin-bottom:35px;
+}
+
 .products {
-  padding:90px 80px;
-}
-
-.products h2 {
-  font-size:40px;
-  margin-bottom:30px;
+  background:white;
 }
 
 .product-list {
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:25px;
+  gap:26px;
 }
 
 .product {
   background:#fafafa;
   border:1px solid #eee;
-  padding:30px;
-  border-radius:14px;
+  padding:34px;
+  border-radius:18px;
+  transition:0.2s;
+}
+
+.product:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
 }
 
 .product h3 {
   color:#7A0000;
+  font-size:25px;
+  margin-top:0;
 }
 
-/* HALAL */
+.quality {
+  background:#f9f9f9;
+}
+
+.quality-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.quality-box {
+  background:white;
+  padding:34px;
+  border-radius:18px;
+  border:1px solid #eee;
+}
+
 .halal {
-  padding:80px;
-  text-align:center;
   background:#7A0000;
   color:white;
+  text-align:center;
 }
 
-/* CONTACT */
+.halal h2 {
+  margin-bottom:15px;
+}
+
 .contact {
-  padding:90px 80px;
+  background:white;
 }
 
-/* WHATSAPP */
+.contact-card {
+  max-width:650px;
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:18px;
+  padding:35px;
+}
+
 .whatsapp {
   position:fixed;
   right:25px;
@@ -160,16 +219,50 @@ nav a:hover {
   padding:16px 24px;
   border-radius:50px;
   text-decoration:none;
-  font-weight:800;
-  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  font-weight:900;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+footer {
+  background:#111;
+  color:white;
+  padding:30px 80px;
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  header {flex-direction:column; padding:20px;}
-  .hero {padding:60px 20px;}
-  .hero h1 {font-size:36px;}
-  .product-list {grid-template-columns:1fr;}
+  header {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:22px;
+  }
+
+  .logo img {
+    width:190px;
+  }
+
+  .logo-text .main {
+    font-size:21px;
+  }
+
+  nav {
+    margin-top:20px;
+    flex-wrap:wrap;
+    border-radius:18px;
+  }
+
+  .hero, section {
+    padding:60px 24px;
+  }
+
+  .hero h1 {
+    font-size:38px;
+  }
+
+  .product-list,
+  .quality-grid {
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -178,7 +271,7 @@ nav a:hover {
 
 <header>
   <div class="logo">
-    <img src="arav-logo.jpg">
+    <img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
     <div class="logo-text">
       <div class="main">Premium Poultry & Meat Supplier</div>
       <div class="sub">Fresh Quality & Trust</div>
@@ -187,14 +280,15 @@ nav a:hover {
 
   <nav>
     <a href="#producten">Producten</a>
+    <a href="#kwaliteit">Kwaliteit</a>
+    <a href="#halal">Halal</a>
     <a href="#contact">Contact</a>
+    <a class="nav-whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP%2C%20ik%20wil%20graag%20meer%20informatie%20ontvangen%20over%20jullie%20producten%20en%20prijzen." target="_blank">WhatsApp</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>
-    Betrouwbare leverancier van halal gevogelte en vlees voor horeca en groothandel
-  </h1>
+  <h1>Betrouwbare leverancier van halal gevogelte en vlees voor horeca en groothandel.</h1>
 
   <p>
     <span class="hero-strong">Snelle levering.</span>
@@ -207,10 +301,10 @@ nav a:hover {
   </a>
 
   <div class="trustbar">
-    <div class="trust-item">✔ Levering NL / BE / DE</div>
+    <div class="trust-item">✔ 100% HALAL</div>
     <div class="trust-item">✔ B2B volumes</div>
     <div class="trust-item">✔ Vers & diepvries</div>
-    <div class="trust-item">✔ 100% HALAL</div>
+    <div class="trust-item">✔ NL / BE / DE levering</div>
   </div>
 </section>
 
@@ -220,36 +314,67 @@ nav a:hover {
   <div class="product-list">
     <div class="product">
       <h3>Kip</h3>
-      <p>Vers en diepvries beschikbaar</p>
+      <p>Verse en diepvries kipproducten voor horeca, retail en groothandel.</p>
     </div>
 
     <div class="product">
       <h3>Kalkoen</h3>
-      <p>Hoogwaardige kwaliteit</p>
+      <p>Hoogwaardige kalkoenproducten voor professionele afnemers.</p>
     </div>
 
     <div class="product">
       <h3>Eend</h3>
-      <p>Voor horeca en export</p>
+      <p>Eendproducten voor horeca, speciaalzaken en B2B-klanten.</p>
     </div>
 
     <div class="product">
       <h3>Vlees</h3>
-      <p>Breed assortiment</p>
+      <p>Halal vleesproducten op aanvraag en volgens beschikbare specificaties.</p>
     </div>
   </div>
 </section>
 
-<section class="halal">
-  <h2>100% HALAL gecertificeerd</h2>
-  <p>Kwaliteit, vertrouwen en professionele levering staan centraal.</p>
+<section id="kwaliteit" class="quality">
+  <h2>Kwaliteit & betrouwbaarheid</h2>
+
+  <div class="quality-grid">
+    <div class="quality-box">
+      <h3>Constante kwaliteit</h3>
+      <p>Wij richten ons op betrouwbare producten met duidelijke specificaties.</p>
+    </div>
+
+    <div class="quality-box">
+      <h3>Snelle communicatie</h3>
+      <p>Direct contact via WhatsApp voor prijzen, volumes en beschikbaarheid.</p>
+    </div>
+
+    <div class="quality-box">
+      <h3>B2B service</h3>
+      <p>Geschikt voor horeca, toko’s, supermarkten, retail en groothandel.</p>
+    </div>
+  </div>
+</section>
+
+<section id="halal" class="halal">
+  <h2>100% HALAL</h2>
+  <p>Onze producten worden geleverd met focus op halal kwaliteit, vertrouwen en professionele afhandeling.</p>
 </section>
 
 <section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>📞 +31 (0)6 19 59 86 66</p>
-  <p>📧 info@aravmeat.com</p>
+
+  <div class="contact-card">
+    <p><strong>Telefoon:</strong> +31 (0)6 19 59 86 66</p>
+    <p><strong>E-mail:</strong> info@aravmeat.com</p>
+    <p><strong>Regio:</strong> Den Haag / Nederland</p>
+
+    <a class="btn" href="mailto:info@aravmeat.com">Stuur een e-mail</a>
+  </div>
 </section>
+
+<footer>
+  © 2026 ARAV MEATGROUP — Fresh Quality & Trust
+</footer>
 
 <a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP%2C%20ik%20wil%20graag%20meer%20informatie%20ontvangen%20over%20jullie%20producten%20en%20prijzen." target="_blank">
   WhatsApp
