@@ -15,36 +15,46 @@ body {
 
 /* HEADER */
 header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:30px 60px;
   border-bottom:1px solid #eee;
-  text-align:center;
+}
+
+.logo {
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
 
 .logo img {
-  width:160px;
+  width:180px;
 }
 
-.subtext {
-  margin-top:10px;
-  font-size:18px;
+.logo-text {
+  display:flex;
+  flex-direction:column;
+}
+
+.logo-text .main {
+  font-size:22px;
+  font-weight:800;
   color:#7A0000;
-  font-weight:600;
 }
 
-.tagline {
+.logo-text .sub {
   font-size:14px;
   color:#777;
-  margin-top:5px;
 }
 
 /* HERO */
 .hero {
   padding:100px 60px;
-  text-align:center;
 }
 
 .hero h2 {
-  font-size:46px;
+  font-size:48px;
   margin-bottom:20px;
 }
 
@@ -76,9 +86,11 @@ header {
 <header>
   <div class="logo">
     <img src="arav-logo.jpg" alt="logo">
+    <div class="logo-text">
+      <div class="main">Premium Poultry & Meat Supplier</div>
+      <div class="sub">Fresh Quality & Trust</div>
+    </div>
   </div>
-  <div class="subtext">Premium Poultry & Meat Supplier</div>
-  <div class="tagline">Fresh Quality & Trust</div>
 </header>
 
 <section class="hero">
@@ -89,4 +101,3 @@ header {
 
 </body>
 </html>
-
