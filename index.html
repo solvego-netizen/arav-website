@@ -1,228 +1,674 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARAV MEATGROUP</title>
 
 <style>
+:root{--red:#7A0000;--darkred:#4B0000;--gold:#D4AF37;--cream:#F8F3EA;--dark:#111}
 :root{
---red:#7A0000;
---gold:#D4AF37;
-  --dark:#0b0b0b;
-  --dark:#0e0e0e;
---light:#f7f4ef;
+  --red:#B22222;
+  --darkred:#4B0000;
+  --gold:#C69214;
+  --cream:#F8F3EA;
+  --black:#0B0B0B;
+  --soft:#F7F4EF;
 }
 
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;color:#111}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#111;background:white}
+
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 70px;background:linear-gradient(135deg,var(--darkred),var(--red));color:white;border-bottom:3px solid var(--gold);box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.logo-area{display:flex;align-items:center;gap:20px}
+.logo-area img{width:210px;background:white;padding:8px;border-radius:14px}
+.brand-line{border-left:3px solid var(--gold);padding-left:16px}
+.brand-line .main{font-size:24px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.gold{color:var(--gold)}
+.white{color:white}
+.brand-line .sub{font-size:13px;margin-top:4px;color:#f0d98a;letter-spacing:.5px}
+.menu-area{display:flex;align-items:center;gap:15px}
+nav{display:flex;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px;border-radius:50px}
+nav a{color:white;text-decoration:none;font-weight:800;font-size:14px;padding:10px 15px;border-radius:40px}
+nav a:hover{background:var(--gold);color:var(--darkred)}
+.lang{display:flex;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px 10px;border-radius:50px;font-size:20px}
+
+.hero{padding:95px 80px;background:linear-gradient(120deg,#fff,var(--cream))}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.label{display:inline-block;color:var(--red);background:white;border:1px solid rgba(212,175,55,.55);padding:10px 18px;border-radius:50px;font-weight:900;margin-bottom:25px}
+.hero h1{font-size:56px;line-height:1.04;margin:0 0 22px}
+.hero p{font-size:21px;color:#444;line-height:1.5}
+.hero-image{min-height:430px;border-radius:30px;background:linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.22)),url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1400&q=80");background-size:cover;background-position:center;box-shadow:0 20px 55px rgba(0,0,0,.18)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--red),var(--darkred));color:white;padding:17px 34px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:25px;border:none;cursor:pointer}
+.trust{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.trust div{background:white;border:1px solid #eee;padding:13px 18px;border-radius:14px;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#111;
+  background:white;
+}
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-  padding:22px 70px;
-  padding:20px 70px;
-background:linear-gradient(135deg,#4B0000,#7A0000);
-color:white;
-}
-
-.brand{
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 70px;
+  background:
+    radial-gradient(circle at top right,rgba(198,146,20,.25),transparent 28%),
+    linear-gradient(135deg,#3a0000,#7A0000);
+  color:white;
+  border-bottom:3px solid var(--gold);
+  box-shadow:0 12px 35px rgba(0,0,0,.25);
+  position:relative;
+  z-index:10;
 }
 
-.brand h1{
-  margin:0;
-  font-size:24px;
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.logo-area img{
+  width:190px;
+  background:white;
+  padding:8px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.brand-line{
+  border-left:3px solid var(--gold);
+  padding-left:16px;
+}
+
+.logo-text{
   font-weight:900;
+  line-height:1;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 
-.brand h1 span{
-  color:var(--gold);
+.logo-red{color:var(--red);font-size:28px;letter-spacing:1px}
+.logo-gold{color:var(--gold);font-size:28px;letter-spacing:1px}
+
+.logo-sub{
+  color:var(--red);
+  font-size:15px;
+  margin-top:3px;
+  letter-spacing:2px;
 }
 
-.brand small{
+.brand-tagline{
   color:#f0d98a;
-  font-size:12px;
+  font-size:13px;
+  margin-top:7px;
+}
+
+.menu-area{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
 nav{
   display:flex;
-  gap:18px;
+  gap:8px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  padding:8px;
+  border-radius:50px;
+  backdrop-filter:blur(8px);
 }
 
 nav a{
-color:white;
-  margin-left:20px;
-text-decoration:none;
+  color:white;
+  text-decoration:none;
   font-weight:800;
+  font-size:14px;
+  padding:10px 14px;
+  border-radius:40px;
 }
 
 nav a:hover{
-  color:var(--gold);
+  background:var(--gold);
+  color:#3a0000;
 }
 
 .lang{
-  display:flex;
-  gap:8px;
-  background:rgba(255,255,255,0.1);
-  padding:6px 10px;
-  border-radius:20px;
-  font-weight:bold;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  padding:8px 11px;
+  border-radius:50px;
+  font-size:19px;
 }
-
-.lang span{font-size:18px}
 
 /* HERO */
 .hero{
-padding:90px 70px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-  align-items:center;
-  background:#fff;
+  padding:95px 80px;
+  background:
+    radial-gradient(circle at top right,rgba(198,146,20,.12),transparent 30%),
+    linear-gradient(120deg,#fff,var(--cream));
 }
 
-.hero h2{font-size:50px}
-.hero p{font-size:18px;color:#444}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:60px;
+  align-items:center;
+}
 
-.hero-img{
+.label{
+  display:inline-block;
+  color:var(--darkred);
+  background:white;
+  border:1px solid rgba(198,146,20,.55);
+  padding:10px 18px;
+  border-radius:50px;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:1px;
+  margin-bottom:24px;
+}
+
+.hero h1{
+  font-size:58px;
+  line-height:1.03;
+  margin:0 0 22px;
+  letter-spacing:-1.5px;
+}
+
+.hero p{
+  font-size:21px;
+  color:#444;
+  line-height:1.55;
+}
+
 .hero-image{
-height:420px;
-border-radius:20px;
-background:url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d") center/cover;
+  min-height:455px;
+  border-radius:34px;
+  background:
+    linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.24)),
+    url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1500&q=85");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 28px 70px rgba(0,0,0,.22);
+  border:1px solid rgba(0,0,0,.05);
 }
 
 .btn{
-background:var(--red);
-color:white;
-padding:14px 25px;
-display:inline-block;
-margin-top:20px;
-text-decoration:none;
-border-radius:8px;
+  display:inline-block;
+  background:linear-gradient(135deg,var(--red),var(--darkred));
+  color:white;
+  padding:17px 34px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:900;
+  margin-top:24px;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 12px 28px rgba(75,0,0,.25);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-light{
+  background:white;
+  color:var(--darkred);
+}
+
+.trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:32px;
+}
+
+.trust div{
+  background:white;
+  border:1px solid #eee;
+  padding:13px 18px;
+  border-radius:14px;
+  font-weight:900;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+/* GENERAL */
+section{padding:90px 80px}
+h2{font-size:42px;margin:0 0 26px}
+.section-intro{color:#555;font-size:18px;max-width:820px;line-height:1.6;margin-bottom:38px}
+
+.about-grid,.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.about-box,.card,.supplier-card{background:#fafafa;border:1px solid #eee;border-radius:22px;padding:32px;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.about-box h3,.card h3,.supplier-card h3{color:var(--red);margin-top:0}
+
+.products{background:#f7f4ef}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.product-card{background:white;border-radius:24px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.08);min-height:430px}
+.product-img{height:220px;background-size:cover;background-position:center}
+.product-content{padding:26px}
+.product-content h3{color:var(--red);font-size:26px;margin:0 0 12px}
+.product-content p{color:#555;line-height:1.6}
+.product-content a{color:var(--red);font-weight:900;text-decoration:none}
+.dark-card{background:linear-gradient(140deg,#111,#3b0505);color:white;display:flex;align-items:center}
+.dark-card h3,.dark-card a{color:var(--gold)}
+.dark-card p,.dark-card span{color:#ddd}
+
+.why{background:#111;color:white}
+.why-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
+.why-left span{color:var(--gold);font-weight:900;letter-spacing:2px;font-size:13px}
+.why-left h2{font-size:46px;line-height:1.1}
+.why-left p{color:#ccc;font-size:18px;line-height:1.7}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.why-card{background:#1b1b1b;border:1px solid #333;border-radius:24px;padding:30px;box-shadow:0 18px 45px rgba(0,0,0,.25)}
+.why-card h3{color:var(--gold);margin-top:0}
+.why-card p{color:#ccc;line-height:1.6}
+
+.interactive-card{background:linear-gradient(140deg,#111,#2a1515);color:white;border-radius:28px;padding:38px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+.interactive-card h3{color:var(--gold);font-size:28px;margin-top:0}
+.country-buttons{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}
+.country-buttons button{background:white;color:#111;border:none;padding:14px 18px;border-radius:50px;font-weight:900;cursor:pointer}
+.country-info{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:22px;color:#eee}
+.steps{display:grid;gap:18px}
+.step{border-left:4px solid var(--gold);background:#fafafa;padding:22px;border-radius:16px}
+
+.suppliers{background:white}
+.supplier-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+.supplier-main{background:#fafafa;border:1px solid #eee;border-radius:24px;padding:35px;box-shadow:0 8px 25px rgba(0,0,0,.04)}
+.supplier-main h3{color:var(--red);font-size:28px;margin-top:0}
+.supplier-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+.supplier-checks div{background:white;border:1px solid #eee;border-radius:12px;padding:14px;font-weight:800}
+.supplier-side{display:grid;gap:20px}
+
+.quote{background:#f9f9f9}
+.quote-form{max-width:850px;background:white;border:1px solid #eee;border-radius:24px;padding:35px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-group{display:flex;flex-direction:column}
+.form-group.full{grid-column:1/-1}
+label{font-weight:900;margin-bottom:8px}
+input,select,textarea{padding:15px;border:1px solid #ddd;border-radius:10px;font-size:15px}
+
+.bottom{background:#111;color:white;padding:0}
+.bottom-top{display:grid;grid-template-columns:2fr 1fr;gap:45px;padding:75px 80px;background:linear-gradient(120deg,var(--darkred),#111)}
+.bottom-panels{display:grid;grid-template-columns:2fr 1fr 1fr;gap:26px;padding:65px 80px}
+.panel{background:linear-gradient(140deg,#1a1a1a,#262626);padding:30px;border-radius:20px;box-shadow:0 15px 35px rgba(0,0,0,.3)}
+.panel.main{display:flex;gap:24px;align-items:center}
+.panel img{width:110px;background:white;padding:12px;border-radius:12px}
+.panel h3{color:var(--gold)}
+.company-info{margin-top:15px;display:flex;flex-wrap:wrap;gap:8px}
+.company-info span{font-size:11px;color:#bbb;border:1px solid #333;padding:6px 8px;border-radius:6px;background:rgba(255,255,255,.04)}
+.bottom-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:30px 80px;border-top:1px solid #222}
+.footer-links a{color:#bbb;margin-right:15px;text-decoration:none;font-weight:700}
+.halal{border:2px solid var(--gold);border-radius:50%;color:var(--gold);padding:12px;text-align:center;font-weight:900}
+.copy{text-align:right;color:#777}
+
+.whatsapp{position:fixed;right:22px;bottom:22px;background:#25D366;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:28px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.25);z-index:99}
+h2{font-size:44px;margin:0 0 26px;letter-spacing:-.5px}
+.section-intro{
+  color:#555;
+  font-size:18px;
+  max-width:840px;
+  line-height:1.7;
+  margin-bottom:38px;
 }
 
 /* ABOUT */
-.about{
-  padding:80px 70px;
+.about-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:28px;
 }
 
-.about p{
-  max-width:800px;
-  line-height:1.6;
-  color:#555;
+.about-box{
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:24px;
+  padding:34px;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.about-box h3{
+  color:var(--red);
+  margin-top:0;
 }
 
 /* PRODUCTS */
-/* PRODUCTS GRID */
 .products{
-padding:80px 70px;
-background:var(--light);
+  background:var(--soft);
 }
 
-.grid{
 .products-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  gap:25px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
 }
 
-.card{
-background:white;
-  border-radius:15px;
-  border-radius:18px;
-overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+.product-card{
+  background:white;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 16px 42px rgba(0,0,0,.09);
+  min-height:440px;
+  transition:.25s;
 }
 
-.card-img{
-height:200px;
-background-size:cover;
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 24px 60px rgba(0,0,0,.16);
+}
+
+.product-img{
+  height:230px;
+  background-size:cover;
   background-position:center;
 }
 
-.card-content{padding:15px}
-.card-content{
-  padding:20px;
+.product-content{
+  padding:28px;
+}
+
+.product-content h3{
+  color:var(--red);
+  font-size:27px;
+  margin:0 0 12px;
+}
+
+.product-content p{
+  color:#555;
+  line-height:1.6;
+}
+
+.product-content a{
+  color:var(--red);
+  font-weight:900;
+  text-decoration:none;
+}
+
+.dark-card{
+  background:
+    radial-gradient(circle at top right,rgba(198,146,20,.25),transparent 35%),
+    linear-gradient(140deg,#111,#3b0505);
+  color:white;
+  display:flex;
+  align-items:center;
+}
+
+.dark-card h3,
+.dark-card a{
+  color:var(--gold);
+}
+
+.dark-card p,
+.dark-card span{
+  color:#ddd;
 }
 
 /* WHY */
 .why{
-background:#111;
-color:white;
-padding:80px 70px;
-display:grid;
-grid-template-columns:1fr 1fr;
-  gap:40px;
+  background:#0e0e0e;
+  color:white;
+}
+
+.why-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.why-left span{
+  color:var(--gold);
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.why-left h2{
+  font-size:46px;
+  line-height:1.1;
+}
+
+.why-left p{
+  color:#ccc;
+  font-size:18px;
+  line-height:1.7;
 }
 
 .why-grid{
-display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+  display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  gap:22px;
 }
 
-.why-box{
-background:#1c1c1c;
-  padding:20px;
-  border-radius:10px;
-  padding:25px;
-  border-radius:15px;
-}
-
-/* BOTTOM */
-/* BOTTOM PREMIUM */
-.bottom{
-background:#111;
-color:white;
-}
-
-.bottom-top{
-display:grid;
-grid-template-columns:2fr 1fr;
-  gap:50px;
-padding:70px;
-  background:linear-gradient(120deg,#4B0000,#111);
-}
-
-.bottom-panels{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-  gap:20px;
-  gap:25px;
-padding:60px 70px;
-}
-
-.panel{
-  background:#1c1c1c;
-  padding:25px;
-  border-radius:15px;
-  background:#1b1b1b;
+.why-card{
+  background:linear-gradient(140deg,#1b1b1b,#262626);
+  border:1px solid #333;
+  border-radius:24px;
   padding:30px;
+  box-shadow:0 18px 45px rgba(0,0,0,.25);
+}
+
+.why-card h3{
+  color:var(--gold);
+  margin-top:0;
+}
+
+.why-card p{
+  color:#ccc;
+  line-height:1.6;
+}
+
+/* PROCESS */
+.process-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.interactive-card{
+  background:
+    radial-gradient(circle at top right,rgba(198,146,20,.22),transparent 35%),
+    linear-gradient(140deg,#111,#2a1515);
+  color:white;
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 22px 55px rgba(0,0,0,.2);
+}
+
+.interactive-card h3{
+  color:var(--gold);
+  font-size:29px;
+  margin-top:0;
+}
+
+.country-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px 0;
+}
+
+.country-buttons button{
+  background:white;
+  color:#111;
+  border:none;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.country-buttons button:hover{
+  background:var(--gold);
+}
+
+.country-info{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  padding:22px;
+  color:#eee;
+}
+
+.steps{
+  display:grid;
+  gap:18px;
+}
+
+.step{
+  border-left:4px solid var(--gold);
+  background:#fafafa;
+  padding:24px;
   border-radius:18px;
 }
 
+/* SUPPLIERS */
+.suppliers{
+  background:white;
+}
+
+.supplier-layout{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+}
+
+.supplier-main{
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:26px;
+  padding:38px;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.supplier-main h3{
+  color:var(--red);
+  font-size:29px;
+  margin-top:0;
+}
+
+.supplier-checks{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.supplier-checks div{
+  background:white;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:14px;
+  font-weight:800;
+}
+
+.supplier-side{
+  display:grid;
+  gap:20px;
+}
+
+.supplier-card{
+  background:#fafafa;
+  border:1px solid #eee;
+  border-radius:24px;
+  padding:32px;
+  box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.supplier-card h3{
+  color:var(--red);
+  margin-top:0;
+}
+
+/* QUOTE */
+.quote{
+  background:#f9f9f9;
+}
+
+.quote-form{
+  max-width:850px;
+  background:white;
+  border:1px solid #eee;
+  border-radius:26px;
+  padding:38px;
+  box-shadow:0 14px 35px rgba(0,0,0,.07);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+label{
+  font-weight:900;
+  margin-bottom:8px;
+}
+
+input,select,textarea{
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:15px;
+}
+
+/* BOTTOM */
+.bottom{
+  background:#111;
+  color:white;
+  padding:0;
+}
+
+.bottom-top{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:45px;
+  padding:78px 80px;
+  background:
+    radial-gradient(circle at top right,rgba(198,146,20,.2),transparent 32%),
+    linear-gradient(120deg,var(--darkred),#111);
+}
+
+.bottom-panels{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:26px;
+  padding:68px 80px;
+}
+
+.panel{
+  background:linear-gradient(140deg,#1a1a1a,#262626);
+  padding:32px;
+  border-radius:22px;
+  box-shadow:0 18px 38px rgba(0,0,0,.34);
+  border:1px solid #2d2d2d;
+}
+
 .panel.main{
-display:flex;
-gap:20px;
+  display:flex;
+  gap:24px;
   align-items:center;
 }
 
 .panel img{
-width:100px;
-background:white;
-padding:10px;
-border-radius:10px;
+  width:115px;
+  background:white;
+  padding:12px;
+  border-radius:14px;
 }
 
-/* COMPANY INFO */
+.panel h3{
+  color:var(--gold);
+}
+
 .company-info{
   margin-top:15px;
   display:flex;
@@ -232,64 +678,132 @@ border-radius:10px;
 
 .company-info span{
   font-size:11px;
-  background:#222;
-  padding:5px 8px;
+  color:#bbb;
+  border:1px solid #333;
+  padding:6px 8px;
   border-radius:6px;
+  background:rgba(255,255,255,.04);
 }
 
-/* FOOTER BAR */
 .bottom-bar{
-display:grid;
-grid-template-columns:1fr auto 1fr;
-padding:30px 70px;
-  border-top:1px solid #333;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:30px 80px;
   border-top:1px solid #222;
 }
 
 .footer-links a{
-color:#bbb;
-  margin-right:10px;
+  color:#bbb;
   margin-right:15px;
   text-decoration:none;
+  font-weight:700;
+}
+
+.footer-links a:hover{
+  color:white;
 }
 
 .halal{
-border:2px solid var(--gold);
-padding:10px;
-border-radius:50%;
-color:var(--gold);
+  border:2px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold);
+  padding:12px;
+  text-align:center;
+  font-weight:900;
+}
+
+.copy{
+  text-align:right;
+  color:#777;
 }
 
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
-  right:20px;
-  bottom:20px;
+  right:22px;
+  bottom:22px;
   background:#25D366;
-  width:60px;
-  height:60px;
+  width:62px;
+  height:62px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
   color:white;
-  font-size:24px;
+  font-size:28px;
   text-decoration:none;
-  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  z-index:99;
 }
 
 /* MOBILE */
 @media(max-width:1000px){
-  .hero,.grid,.why,.why-grid,.bottom-top,.bottom-panels,.bottom-bar{
-  .hero,
+header{flex-direction:column;align-items:flex-start;gap:15px;padding:20px 24px}
+.menu-area{flex-direction:column;align-items:flex-start}
+nav{flex-wrap:wrap;border-radius:18px}
+.hero,section{padding:60px 24px}
+.hero-grid,.about-grid,.products-grid,.why-layout,.why-grid,.process-grid,.supplier-layout,.supplier-checks,.form-grid,.bottom-top,.bottom-panels,.bottom-bar{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.hero-image{min-height:300px}
+.panel.main{flex-direction:column;align-items:flex-start}
+.copy{text-align:left}
+  .premium-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    padding:20px 24px;
+  }
+
+  .logo-area img{
+    width:165px;
+  }
+
+  .menu-area{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    border-radius:18px;
+  }
+
+  .hero,section{
+    padding:60px 24px;
+  }
+
+  .hero-grid,
+  .about-grid,
   .products-grid,
-  .why,
+  .why-layout,
   .why-grid,
+  .process-grid,
+  .supplier-layout,
+  .supplier-checks,
+  .form-grid,
   .bottom-top,
   .bottom-panels,
   .bottom-bar{
-grid-template-columns:1fr;
-}
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero-image{
+    min-height:300px;
+  }
+
+  .panel.main{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .copy{
+    text-align:left;
+  }
 }
 </style>
 </head>
@@ -297,146 +811,238 @@ grid-template-columns:1fr;
 <body>
 
 <header>
-  <div class="brand">
-    <h1><span>ARAV</span> MEATGROUP</h1>
-    <small>Fresh Quality & Trust</small>
-  </div>
+<header class="premium-header">
+<div class="logo-area">
+<img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
 
-  <div>ARAV MEATGROUP</div>
-<nav>
-    <a href="#over">Over ons</a>
-<a href="#producten">Producten</a>
-<a href="#contact">Contact</a>
-</nav>
-
-  <div class="lang">
-    <span>🇳🇱</span>
-    <span>🇬🇧</span>
-    <span>🇩🇪</span>
-  </div>
-</header>
-
-<section class="hero">
-<div>
-    <h2>Premium gevogelte en vlees</h2>
-    <h1>Premium gevogelte en vlees</h1>
-<p>Voor horeca, retail en groothandel</p>
-    <a class="btn" href="https://wa.me/31619598666">Vraag prijs</a>
-    <a class="btn" href="#">Vraag prijs</a>
+<div class="brand-line">
+      <div class="main"><span class="gold">ARAV</span> <span class="white">MEATGROUP</span></div>
+      <div class="sub">Fresh Quality & Trust</div>
+      <div class="logo-text">
+        <span class="logo-red">AR</span><span class="logo-gold">AV</span>
+        <div class="logo-sub">MEATGROUP</div>
+      </div>
+      <div class="brand-tagline">Fresh Quality & Trust</div>
 </div>
-  <div class="hero-img"></div>
+</div>
+
+@@ -149,32 +744,82 @@
+<div class="label">B2B LEVERANCIER • EUROPESE DISTRIBUTIE</div>
+<h1>Betrouwbare leverancier van kip, kalkoen en vlees voor horeca & groothandel</h1>
+<p>Scherpe B2B-prijzen, flexibele volumes en levering in Nederland, België en Duitsland.</p>
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">Vraag direct prijs via WhatsApp</a>
+
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">
+        Vraag direct prijs via WhatsApp
+      </a>
+
+<div class="trust">
+        <div>B2B leverancier</div><div>Halal op aanvraag</div><div>Vers & diepvries</div><div>NL / BE / DE</div>
+        <div>B2B leverancier</div>
+        <div>Halal op aanvraag</div>
+        <div>Vers & diepvries</div>
+        <div>NL / BE / DE</div>
+</div>
+</div>
+
+<div class="hero-image"></div>
+</div>
 </section>
 
-<section id="over" class="about">
-  <h2>Over ons</h2>
-  <p>
-    ARAV MEATGROUP levert gevogelte en vlees aan horeca, retail en groothandel.
-    Wij staan voor duidelijke communicatie, betrouwbare levering en scherpe prijzen.
+<section id="over">
+<h2>Over ARAV MEATGROUP</h2>
+  <p class="section-intro">ARAV MEATGROUP levert gevogelte en vlees aan professionele afnemers zoals horeca, retail, toko’s, supermarkten en groothandel.</p>
+  <p class="section-intro">
+    ARAV MEATGROUP levert gevogelte en vlees aan professionele afnemers zoals horeca, retail, toko’s, supermarkten en groothandel.
   </p>
-  <div class="hero-image"></div>
+
+<div class="about-grid">
+    <div class="about-box"><h3>Onze focus</h3><p>Duidelijke communicatie, betrouwbare levering en langdurige samenwerking met professionele klanten.</p></div>
+    <div class="about-box"><h3>Voor wie</h3><p>Horeca, retail, toko’s, supermarkten, groothandel en partners binnen distributie en foodservice.</p></div>
+    <div class="about-box">
+      <h3>Onze focus</h3>
+      <p>Duidelijke communicatie, betrouwbare levering en langdurige samenwerking met professionele klanten.</p>
+    </div>
+
+    <div class="about-box">
+      <h3>Voor wie</h3>
+      <p>Horeca, retail, toko’s, supermarkten, groothandel en partners binnen distributie en foodservice.</p>
+    </div>
+</div>
 </section>
 
 <section id="producten" class="products">
-  <h2>Producten</h2>
-  <h2>Ons assortiment</h2>
+<h2>Ons assortiment</h2>
+<p class="section-intro">Vraag prijzen aan voor kip, kalkoen, eend en vlees op aanvraag.</p>
 
-  <div class="grid">
-  <div class="products-grid">
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d')"></div>
-<div class="card-content"><h3>Kip</h3></div>
-</div>
+<div class="products-grid">
+    <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80')"></div><div class="product-content"><h3>Kip</h3><p>Kippendijen, filet en andere kipproducten.</p><a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kip" target="_blank">Vraag kipprijzen →</a></div></div>
+    <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=900&q=80')"></div><div class="product-content"><h3>Kalkoen</h3><p>Kalkoenproducten voor B2B-volumes.</p><a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kalkoen" target="_blank">Vraag kalkoenprijzen →</a></div></div>
+    <div class="product-card"><div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=900&q=80')"></div><div class="product-content"><h3>Eend</h3><p>Eendproducten voor horeca en speciaalzaken.</p><a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20eend" target="_blank">Vraag eendprijzen →</a></div></div>
+    <div class="product-card dark-card"><div class="product-content"><span>OP AANVRAAG</span><h3>Vlees</h3><p>Afgestemd op product, volume en leverlocatie.</p><a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20vlees" target="_blank">Bespreek aanbod →</a></div></div>
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80')"></div>
+      <div class="product-content">
+        <h3>Kip</h3>
+        <p>Kippendijen, filet en andere kipproducten.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kip" target="_blank">Vraag kipprijzen →</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976')"></div>
-<div class="card-content"><h3>Kalkoen</h3></div>
-</div>
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=900&q=80')"></div>
+      <div class="product-content">
+        <h3>Kalkoen</h3>
+        <p>Kalkoenproducten voor B2B-volumes.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kalkoen" target="_blank">Vraag kalkoenprijzen →</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1518492104633-130d0cc84637')"></div>
-<div class="card-content"><h3>Eend</h3></div>
-</div>
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=900&q=80')"></div>
+      <div class="product-content">
+        <h3>Eend</h3>
+        <p>Eendproducten voor horeca en speciaalzaken.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20eend" target="_blank">Vraag eendprijzen →</a>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-content"><h3>Vlees op aanvraag</h3></div>
-</div>
+    <div class="product-card dark-card">
+      <div class="product-content">
+        <span>OP AANVRAAG</span>
+        <h3>Vlees</h3>
+        <p>Afgestemd op product, volume en leverlocatie.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20vlees" target="_blank">Bespreek aanbod →</a>
+      </div>
+    </div>
 </div>
 </section>
 
-<section class="why">
-<div>
-<h2>Waarom ARAV</h2>
-    <p>Betrouwbare levering en duidelijke afspraken</p>
+@@ -186,6 +831,7 @@ <h2>Gebouwd voor klanten die zekerheid willen.</h2>
+<p>Geen lange lijnen. Geen onduidelijkheid. Gewoon snel schakelen over prijs, volume en levering.</p>
+<a class="btn" href="#offerte">Start aanvraag</a>
 </div>
 
 <div class="why-grid">
-<div class="why-box">Snelle communicatie</div>
-<div class="why-box">B2B gericht</div>
-<div class="why-box">Flexibel</div>
-<div class="why-box">Betrouwbaar</div>
+<div class="why-card"><h3>Snelle communicatie</h3><p>Direct contact via WhatsApp of e-mail.</p></div>
+<div class="why-card"><h3>B2B gericht</h3><p>Voor horeca, retail en groothandel.</p></div>
+@@ -198,12 +844,23 @@ <h2>Gebouwd voor klanten die zekerheid willen.</h2>
+<section id="proces">
+<h2>Hoe wij samenwerken</h2>
+<p class="section-intro">Snel schakelen, duidelijke afspraken en levering voor professionele klanten.</p>
+
+<div class="process-grid">
+<div class="interactive-card">
+      <h3>Leveringsgebied</h3><p>Kies een regio:</p>
+      <div class="country-buttons"><button onclick="showCountry('nl')">🇳🇱 Nederland</button><button onclick="showCountry('be')">🇧🇪 België</button><button onclick="showCountry('de')">🇩🇪 Duitsland</button></div>
+      <div id="country-info" class="country-info">Selecteer een land voor meer informatie over levering.</div>
+      <h3>Leveringsgebied</h3>
+      <p>Kies een regio:</p>
+
+      <div class="country-buttons">
+        <button onclick="showCountry('nl')">🇳🇱 Nederland</button>
+        <button onclick="showCountry('be')">🇧🇪 België</button>
+        <button onclick="showCountry('de')">🇩🇪 Duitsland</button>
+      </div>
+
+      <div id="country-info" class="country-info">
+        Selecteer een land voor meer informatie over levering.
+      </div>
 </div>
+
+<div class="steps">
+<div class="step"><h3>1. Aanvraag</h3><p>Stuur product, volume en leverlocatie door.</p></div>
+<div class="step"><h3>2. Prijsvoorstel</h3><p>Wij reageren met prijs, beschikbaarheid en leveropties.</p></div>
+@@ -215,13 +872,24 @@ <h3>Leveringsgebied</h3><p>Kies een regio:</p>
+<section id="leveranciers" class="suppliers">
+<h2>Leverancier of partner worden?</h2>
+<p class="section-intro">Wij zoeken betrouwbare leveranciers en partners voor gevogelte, vlees, opslag, transport en internationale handel.</p>
+
+<div class="supplier-layout">
+<div class="supplier-main">
+<h3>Stuur ons uw aanbod</h3>
+<p>Levert u kip, kalkoen, eend of vleesproducten? Stuur productspecificaties, volumes, certificeringen, prijzen en levercondities.</p>
+      <div class="supplier-checks"><div>Productspecificaties</div><div>Beschikbare volumes</div><div>Certificeringen</div><div>EXW / DAP / levercondities</div></div>
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20wij%20willen%20ons%20aanbod%20als%20leverancier%20bespreken." target="_blank">Aanbod bespreken</a>
+
+      <div class="supplier-checks">
+        <div>Productspecificaties</div>
+        <div>Beschikbare volumes</div>
+        <div>Certificeringen</div>
+        <div>EXW / DAP / levercondities</div>
+      </div>
+
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20wij%20willen%20ons%20aanbod%20als%20leverancier%20bespreken." target="_blank">
+        Aanbod bespreken
+      </a>
+</div>
+
+<div class="supplier-side">
+<div class="supplier-card"><h3>Leveranciers</h3><p>Voor partijen met constante kwaliteit, duidelijke documentatie en concurrerende B2B-prijzen.</p></div>
+<div class="supplier-card"><h3>Logistiek</h3><p>Transport, gekoelde opslag, cross-dock en distributie in NL / BE / DE.</p></div>
+@@ -232,8 +900,10 @@ <h3>Stuur ons uw aanbod</h3>
+<section id="offerte" class="quote">
+<h2>Offerte aanvragen</h2>
+<p class="section-intro">Vul uw aanvraag in. Wij reageren met prijs, beschikbaarheid en levermogelijkheden.</p>
+
+<form class="quote-form" action="https://formspree.io/f/xaqvoyjk" method="POST">
+<input type="hidden" name="_subject" value="Nieuwe offerte aanvraag via ARAV MEATGROUP website">
+
+<div class="form-grid">
+<div class="form-group"><label>Naam</label><input type="text" name="naam" required></div>
+<div class="form-group"><label>Bedrijf</label><input type="text" name="bedrijf"></div>
+@@ -243,25 +913,50 @@ <h2>Offerte aanvragen</h2>
+<div class="form-group"><label>E-mail</label><input type="email" name="email"></div>
+<div class="form-group full"><label>Bericht</label><textarea name="bericht" rows="4"></textarea></div>
+</div>
+
+<button class="btn" type="submit">Verstuur offerte aanvraag</button>
+</form>
 </section>
 
 <section id="contact" class="bottom">
-<section class="bottom">
-
 <div class="bottom-top">
-<div>
-<h2>Klaar om samen te werken?</h2>
-<p>Neem contact op voor prijzen en volumes</p>
-</div>
-<div>
-      <a class="btn" href="https://wa.me/31619598666">WhatsApp</a>
-      <a class="btn" href="#">WhatsApp</a>
-</div>
+    <div><h2>Klaar om prijzen of samenwerking te bespreken?</h2><p>Stuur uw gewenste product, volume en leverlocatie. Dan kunnen wij gericht reageren.</p></div>
+    <div><a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">WhatsApp direct</a></div>
+    <div>
+      <h2>Klaar om prijzen of samenwerking te bespreken?</h2>
+      <p>Stuur uw gewenste product, volume en leverlocatie. Dan kunnen wij gericht reageren.</p>
+    </div>
+
+    <div>
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">
+        WhatsApp direct
+      </a>
+    </div>
 </div>
 
 <div class="bottom-panels">
-
 <div class="panel main">
-<img src="arav-logo.jpg">
-<div>
-<h3>ARAV MEATGROUP</h3>
-<p>Premium leverancier van vlees en gevogelte</p>
-
+<img src="arav-logo.jpg" alt="ARAV MEATGROUP">
+      <div><h3>ARAV MEATGROUP</h3><p>Premium leverancier van vlees en gevogelte voor professionele afnemers.</p><div class="company-info"><span>KVK: 97140082</span><span>BTW: NL867926284B01</span><span>IBAN: NL46 RABO 0124519679</span></div></div>
+      <div>
+        <h3>ARAV MEATGROUP</h3>
+        <p>Premium leverancier van vlees en gevogelte voor professionele afnemers.</p>
         <div class="company-info">
           <span>KVK: 97140082</span>
           <span>BTW: NL867926284B01</span>
           <span>IBAN: NL46 RABO 0124519679</span>
         </div>
-</div>
-</div>
-
-<div class="panel">
-<h3>Levering</h3>
-<p>NL / BE / DE</p>
+      </div>
 </div>
 
-<div class="panel">
-<h3>Contact</h3>
-<p>info@aravmeat.com</p>
-</div>
-
+<div class="panel"><h3>Levering</h3><p>Nederland<br>België<br>Duitsland</p></div>
+<div class="panel"><h3>Contact</h3><p>info@aravmeat.com<br>+31 6 19 59 86 66</p></div>
 </div>
 
 <div class="bottom-bar">
-<div class="footer-links">
+    <div class="footer-links"><a href="#over">Over ons</a><a href="#producten">Producten</a><a href="#leveranciers">Leveranciers</a></div>
+    <div class="footer-links">
+      <a href="#over">Over ons</a>
       <a href="#producten">Producten</a>
-      <a href="#contact">Contact</a>
-      <a href="#">Producten</a>
-      <a href="#">Contact</a>
-</div>
+      <a href="#leveranciers">Leveranciers</a>
+    </div>
 
 <div class="halal">HALAL</div>
-
-<div style="text-align:right">
-© ARAV MEATGROUP
+<div class="copy">© 2026 ARAV MEATGROUP</div>
 </div>
-</div>
-
-</section>
-
-<a class="whatsapp" href="https://wa.me/31619598666">💬</a>
-
-</body>
-</html>
