@@ -30,66 +30,73 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:22px 60px;
-
-  background:#7A0000; /* jouw huiskleur */
+  padding:20px 70px;
+  background:linear-gradient(135deg,#4B0000,#7A0000);
   color:white;
+  border-bottom:3px solid #D4AF37;
+  box-shadow:0 8px 25px rgba(0,0,0,0.18);
+  position:relative;
+  z-index:20;
 }
 
-.logo-area{
+.logo-area,
+.header-left{
   display:flex;
   align-items:center;
-  gap:22px;
+  gap:18px;
 }
 
-.logo-area img{
-  width:230px;
+.logo-area img,
+.header-left img{
+  width:210px;
+  height:auto;
+  background:white;
+  padding:8px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
 }
 
-.brand-line{
-  border-left:3px solid var(--gold);
-  padding-left:18px;
+.brand-line,
+.brand-text{
+  border-left:3px solid #D4AF37;
+  padding-left:16px;
 }
 
-.brand-line .main{
-  font-size:23px;
+.brand-line .main,
+.brand-text strong{
+  color:white;
+  font-size:22px;
   font-weight:900;
-  color:var(--red);
+  letter-spacing:.5px;
 }
 
-.brand-line .sub{
-  color:var(--grey);
-  font-size:14px;
-  margin-top:4px;
-}
-
-.menu-area{
-  display:flex;
-  align-items:center;
-  gap:15px;
+.brand-line .sub,
+.brand-text span{
+  color:#f0d98a;
+  font-size:13px;
 }
 
 nav{
   display:flex;
   gap:8px;
-  background:#fafafa;
-  border:1px solid #eee;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
   padding:8px;
   border-radius:50px;
 }
 
 nav a{
   text-decoration:none;
-  color:#111;
+  color:white;
   font-weight:800;
-  padding:11px 17px;
-  border-radius:40px;
   font-size:14px;
+  padding:11px 18px;
+  border-radius:40px;
 }
 
 nav a:hover{
-  background:var(--red);
-  color:white;
+  background:#D4AF37;
+  color:#4B0000;
 }
 
 .lang{
