@@ -8,111 +8,164 @@
 <style>
 :root{
   --red:#7A0000;
+  --red-dark:#4B0000;
   --gold:#D4AF37;
-  --dark:#0e0e0e;
+  --dark:#0b0b0b;
   --light:#f7f4ef;
 }
 
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;color:#111}
+body{
+  margin:0;
+  font-family:Arial;
+  background:white;
+  color:#111;
+}
 
 /* HEADER */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 70px;
+  padding:22px 70px;
   background:linear-gradient(135deg,#4B0000,#7A0000);
   color:white;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 nav a{
   color:white;
-  margin-left:20px;
+  margin-left:22px;
   text-decoration:none;
-  font-weight:bold;
+  font-weight:800;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--gold);
+  transition:.3s;
+}
+
+nav a:hover::after{
+  width:100%;
 }
 
 /* HERO */
 .hero{
-  padding:90px 70px;
+  padding:100px 70px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:50px;
+  gap:60px;
   align-items:center;
-  background:#fff;
+}
+
+.hero h1{
+  font-size:54px;
+  line-height:1.05;
+}
+
+.hero p{
+  font-size:20px;
+  color:#444;
 }
 
 .hero-image{
-  height:420px;
-  border-radius:20px;
-  background:url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d") center/cover;
+  height:440px;
+  border-radius:25px;
+  background:
+    linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),
+    url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d");
+  background-size:cover;
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
 }
 
 .btn{
-  background:var(--red);
+  background:linear-gradient(135deg,#7A0000,#4B0000);
   color:white;
-  padding:14px 25px;
-  display:inline-block;
-  margin-top:20px;
+  padding:16px 30px;
+  border-radius:10px;
   text-decoration:none;
-  border-radius:8px;
+  display:inline-block;
+  margin-top:25px;
+  font-weight:900;
+  transition:.25s;
 }
 
-/* PRODUCTS GRID */
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* PRODUCTS */
 .products{
-  padding:80px 70px;
+  padding:90px 70px;
   background:var(--light);
 }
 
 .products-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:25px;
+  gap:28px;
 }
 
 .card{
   background:white;
-  border-radius:18px;
+  border-radius:20px;
   overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  box-shadow:0 15px 40px rgba(0,0,0,.1);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 50px rgba(0,0,0,.18);
 }
 
 .card-img{
-  height:200px;
+  height:210px;
   background-size:cover;
-  background-position:center;
 }
 
 .card-content{
-  padding:20px;
+  padding:22px;
+}
+
+.card h3{
+  color:var(--red);
 }
 
 /* WHY */
 .why{
-  background:#111;
+  background:var(--dark);
   color:white;
-  padding:80px 70px;
+  padding:90px 70px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:40px;
+  gap:50px;
 }
 
 .why-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  gap:22px;
 }
 
 .why-box{
-  background:#1c1c1c;
-  padding:25px;
-  border-radius:15px;
+  background:linear-gradient(140deg,#1b1b1b,#2a2a2a);
+  padding:28px;
+  border-radius:18px;
+  border:1px solid #333;
 }
 
-/* BOTTOM PREMIUM */
+/* BOTTOM */
 .bottom{
-  background:#111;
+  background:var(--dark);
   color:white;
 }
 
@@ -120,34 +173,36 @@ nav a{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:50px;
-  padding:70px;
+  padding:80px 70px;
   background:linear-gradient(120deg,#4B0000,#111);
 }
 
 .bottom-panels{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
-  gap:25px;
-  padding:60px 70px;
+  gap:28px;
+  padding:70px;
 }
 
 .panel{
-  background:#1b1b1b;
+  background:linear-gradient(140deg,#1a1a1a,#262626);
   padding:30px;
-  border-radius:18px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
 .panel.main{
   display:flex;
-  gap:20px;
+  gap:25px;
   align-items:center;
 }
 
 .panel img{
-  width:100px;
+  width:110px;
   background:white;
-  padding:10px;
-  border-radius:10px;
+  padding:12px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
 .bottom-bar{
@@ -163,12 +218,17 @@ nav a{
   text-decoration:none;
 }
 
+.footer-links a:hover{
+  color:white;
+}
+
 .halal{
   border:2px solid var(--gold);
-  padding:10px;
+  padding:12px;
   border-radius:50%;
   color:var(--gold);
   text-align:center;
+  font-weight:900;
 }
 
 /* MOBILE */
@@ -191,8 +251,8 @@ nav a{
 <header>
   <div>ARAV MEATGROUP</div>
   <nav>
-    <a href="#producten">Producten</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Producten</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
@@ -200,12 +260,12 @@ nav a{
   <div>
     <h1>Premium gevogelte en vlees</h1>
     <p>Voor horeca, retail en groothandel</p>
-    <a class="btn" href="#">Vraag prijs</a>
+    <a class="btn">Vraag prijs</a>
   </div>
   <div class="hero-image"></div>
 </section>
 
-<section id="producten" class="products">
+<section class="products">
   <h2>Ons assortiment</h2>
 
   <div class="products-grid">
@@ -252,12 +312,11 @@ nav a{
       <p>Neem contact op voor prijzen en volumes</p>
     </div>
     <div>
-      <a class="btn" href="#">WhatsApp</a>
+      <a class="btn">WhatsApp</a>
     </div>
   </div>
 
   <div class="bottom-panels">
-
     <div class="panel main">
       <img src="arav-logo.jpg">
       <div>
@@ -275,7 +334,6 @@ nav a{
       <h3>Contact</h3>
       <p>info@aravmeat.com</p>
     </div>
-
   </div>
 
   <div class="bottom-bar">
