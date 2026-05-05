@@ -8,11 +8,13 @@
 <style>
 :root{
   --red:#7A0000;
+  --red-dark:#4B0000;
   --gold:#D4AF37;
 }
 
+/* RESET */
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial}
+body{margin:0;font-family:Arial;color:#111}
 
 /* HEADER */
 header{
@@ -24,32 +26,24 @@ header{
 }
 header img{width:180px}
 
-/* HERO FIXED */
+/* HERO */
 .hero{
-  position:relative;
   height:85vh;
   display:flex;
   align-items:center;
   padding:0 80px;
   color:white;
-
-  background-image:url("https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=1600&q=80");
+  position:relative;
+  background:url("https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=1600&q=80");
   background-size:cover;
-  background-position:center;
 }
-
-.hero::after{
+.hero:after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+  background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.2));
 }
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:700px;
-}
+.hero-content{position:relative;z-index:2;max-width:700px}
 
 .hero h1{font-size:48px;margin:0 0 20px}
 .hero p{color:#ddd;font-size:18px}
@@ -62,6 +56,7 @@ header img{width:180px}
   border-radius:10px;
   text-decoration:none;
   margin-top:20px;
+  font-weight:bold;
 }
 
 /* PRODUCTS */
@@ -86,20 +81,23 @@ header img{width:180px}
   min-height:250px;
 }
 
-.product-info{padding:25px}
+.product-info{
+  padding:25px;
+}
+
 .product-info h3{color:var(--red)}
 
-/* WHY */
-.why{
+/* WHY PREMIUM */
+.why-premium{
   background:#111;
   color:white;
   padding:80px;
 }
 
-.why-grid{
+.why-layout{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:40px;
 }
 
 .why-card{
@@ -109,7 +107,9 @@ header img{width:180px}
 }
 
 /* SUPPLIERS */
-.suppliers{padding:80px}
+.suppliers{
+  padding:80px;
+}
 .supplier-box{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -160,6 +160,7 @@ footer{
   border-radius:50%;
   padding:20px;
   display:inline-block;
+  margin-left:20px;
 }
 
 /* WHATSAPP */
@@ -182,15 +183,15 @@ footer{
 /* MOBILE */
 @media(max-width:900px){
   .products-grid,
-  .why-grid,
+  .why-layout,
   .supplier-box,
   .contact-grid{
     grid-template-columns:1fr;
   }
 
   .hero{
-    height:auto;
     padding:40px;
+    height:auto;
   }
 }
 </style>
@@ -234,10 +235,10 @@ footer{
   </div>
 </section>
 
-<section class="why">
+<section class="why-premium">
   <h2>Waarom ARAV MEATGROUP?</h2>
 
-  <div class="why-grid">
+  <div class="why-layout">
     <div class="why-card">Snelle communicatie</div>
     <div class="why-card">Flexibele volumes</div>
     <div class="why-card">B2B gericht</div>
