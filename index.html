@@ -345,7 +345,6 @@ section{
 
 .steps{
   display:grid;
-  grid-template-columns:1fr;
   gap:18px;
 }
 
@@ -422,70 +421,152 @@ input,select,textarea{
   font-size:15px;
 }
 
-/* CONTACT + FOOTER */
-.contact{
-  background:#111;
+/* PREMIUM BOTTOM */
+.premium-bottom{
+  background:#0b0b0b;
   color:white;
+  padding:0;
 }
 
-.contact-grid{
+.bottom-cta{
+  padding:80px 70px;
+  background:
+    linear-gradient(120deg,rgba(75,0,0,.95),rgba(17,17,17,.98)),
+    radial-gradient(circle at top right,rgba(212,175,55,.18),transparent 35%);
+}
+
+.bottom-cta-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:1.35fr .65fr;
+  gap:50px;
+  align-items:center;
 }
 
-.contact-box{
+.bottom-label{
+  color:var(--gold);
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.bottom-cta h2{
+  font-size:44px;
+  line-height:1.1;
+  margin:15px 0;
+}
+
+.bottom-cta p{
+  color:#ddd;
+  font-size:18px;
+  line-height:1.7;
+  max-width:760px;
+}
+
+.bottom-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn-light{
+  background:white;
+  color:#4B0000;
+}
+
+.bottom-panels{
+  padding:65px 70px;
+  display:grid;
+  grid-template-columns:1.4fr .8fr .8fr;
+  gap:24px;
+  background:#111;
+}
+
+.bottom-panel{
   background:#1b1b1b;
   border:1px solid #333;
-  border-radius:24px;
+  border-radius:26px;
   padding:34px;
+  min-height:250px;
+  box-shadow:0 18px 45px rgba(0,0,0,.25);
 }
 
-.contact-box h3{
-  color:var(--gold);
-  margin-top:0;
-}
-
-.footer{
-  background:#070707;
-  color:white;
-  padding:70px 70px 35px;
-}
-
-.footer-top{
+.bottom-panel.main{
+  background:linear-gradient(140deg,#1b1b1b,#2a1515);
+  border:2px solid rgba(212,175,55,.65);
   display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:50px;
-  border-bottom:1px solid #222;
-  padding-bottom:45px;
-  margin-bottom:35px;
-}
-
-.footer-brand{
-  display:flex;
+  grid-template-columns:auto 1fr;
   gap:28px;
-  align-items:flex-start;
+  align-items:center;
 }
 
 .footer-stamp{
-  width:125px;
-  height:125px;
+  width:135px;
+  height:135px;
   background:white;
   border:4px solid var(--gold);
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-shrink:0;
   transform:rotate(-5deg);
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
 }
 
 .footer-stamp img{
   width:75%;
 }
 
+.bottom-panel h3{
+  color:var(--gold);
+  margin-top:0;
+  font-size:24px;
+}
+
+.bottom-panel p{
+  color:#bbb;
+  line-height:1.6;
+}
+
+.info-list{
+  display:grid;
+  gap:10px;
+}
+
+.info-list span{
+  display:block;
+  color:#ddd;
+  padding-bottom:8px;
+  border-bottom:1px solid #2b2b2b;
+}
+
+.bottom-strip{
+  padding:32px 70px;
+  background:#070707;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  gap:30px;
+  align-items:center;
+  border-top:1px solid #222;
+}
+
+.footer-links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:#bbb;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.footer-links a:hover{
+  color:white;
+}
+
 .halal-seal{
-  width:105px;
-  height:105px;
+  width:98px;
+  height:98px;
   border:2px solid var(--gold);
   border-radius:50%;
   color:var(--gold);
@@ -494,33 +575,11 @@ input,select,textarea{
   justify-content:center;
   text-align:center;
   font-weight:900;
-  flex-shrink:0;
+  line-height:1.2;
 }
 
-.footer-text h3{
-  color:var(--gold);
-  margin-top:0;
-}
-
-.footer-text p,
-.footer-links p{
-  color:#bbb;
-  line-height:1.6;
-}
-
-.footer-links{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-}
-
-.footer-links h4{
-  color:var(--gold);
-}
-
-.footer-bottom{
-  display:flex;
-  justify-content:space-between;
+.bottom-copy{
+  text-align:right;
   color:#777;
   font-size:13px;
 }
@@ -574,20 +633,31 @@ input,select,textarea{
   .process-grid,
   .supplier-grid,
   .form-grid,
-  .contact-grid,
-  .footer-top,
-  .footer-links{
+  .bottom-cta-grid,
+  .bottom-panels,
+  .bottom-panel.main,
+  .bottom-strip{
     grid-template-columns:1fr;
   }
 
   .hero h1,
-  .why-left h2{
+  .why-left h2,
+  .bottom-cta h2{
     font-size:36px;
   }
 
-  .footer-brand,
-  .footer-bottom{
-    flex-direction:column;
+  .bottom-cta,
+  .bottom-panels,
+  .bottom-strip{
+    padding:55px 24px;
+  }
+
+  .bottom-copy{
+    text-align:left;
+  }
+
+  .footer-stamp{
+    transform:rotate(0deg);
   }
 }
 </style>
@@ -768,44 +838,68 @@ input,select,textarea{
   </form>
 </section>
 
-<section id="contact" class="contact">
-  <div class="section-head">
-    <span>CONTACT</span>
-    <h2>Contact & samenwerking</h2>
-    <p>Direct schakelen voor prijzen, volumes en leveringen.</p>
+<section id="contact" class="premium-bottom">
+  <div class="bottom-cta">
+    <div class="bottom-cta-grid">
+      <div>
+        <span class="bottom-label">CONTACT & SAMENWERKING</span>
+        <h2>Klaar om prijzen, volumes of samenwerking te bespreken?</h2>
+        <p>Neem direct contact op voor productinformatie, beschikbaarheid, leverplanning of partnership-mogelijkheden.</p>
+      </div>
+
+      <div class="bottom-actions">
+        <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">WhatsApp</a>
+        <a class="btn btn-light" href="mailto:info@aravmeat.com">E-mail</a>
+      </div>
+    </div>
   </div>
 
-  <div class="contact-grid">
-    <div class="contact-box"><h3>Direct contact</h3><p>+31 (0)6 19 59 86 66</p><p>info@aravmeat.com</p></div>
-    <div class="contact-box"><h3>Levering</h3><p>Nederland</p><p>België</p><p>Duitsland</p></div>
-    <div class="contact-box"><h3>Voor wie</h3><p>Horeca</p><p>Retail</p><p>Groothandel</p></div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-brand">
+  <div class="bottom-panels">
+    <div class="bottom-panel main">
       <div class="footer-stamp"><img src="arav-logo.jpg" alt="ARAV MEATGROUP"></div>
-      <div class="halal-seal">HALAL<br>QUALITY</div>
-      <div class="footer-text">
+      <div>
         <h3>ARAV MEATGROUP</h3>
-        <p>Premium leverancier van gevogelte en vlees voor horeca, retail en groothandel.</p>
+        <p>Premium leverancier van gevogelte en vlees voor horeca, retail en groothandel. Betrouwbare levering, duidelijke communicatie en scherpe B2B-prijzen.</p>
       </div>
     </div>
 
-    <div class="footer-links">
-      <div><h4>Bedrijf</h4><p>Over ons</p><p>Leveranciers</p><p>Contact</p></div>
-      <div><h4>Producten</h4><p>Kip</p><p>Kalkoen</p><p>Eend</p><p>Vlees</p></div>
-      <div><h4>Levering</h4><p>Nederland</p><p>België</p><p>Duitsland</p></div>
-      <div><h4>Contact</h4><p>+31 6 19 59 86 66</p><p>info@aravmeat.com</p></div>
+    <div class="bottom-panel">
+      <h3>Levering</h3>
+      <div class="info-list">
+        <span>🇳🇱 Nederland</span>
+        <span>🇧🇪 België</span>
+        <span>🇩🇪 Duitsland</span>
+        <span>Vers & diepvries</span>
+      </div>
+    </div>
+
+    <div class="bottom-panel">
+      <h3>Contact</h3>
+      <div class="info-list">
+        <span>+31 6 19 59 86 66</span>
+        <span>info@aravmeat.com</span>
+        <span>WhatsApp beschikbaar</span>
+        <span>B2B aanvragen</span>
+      </div>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2026 ARAV MEATGROUP</p>
-    <p>Premium Supplier • European Distribution</p>
+  <div class="bottom-strip">
+    <div class="footer-links">
+      <a href="#producten">Producten</a>
+      <a href="#proces">Werkwijze</a>
+      <a href="#leveranciers">Leveranciers</a>
+      <a href="#offerte">Offerte</a>
+    </div>
+
+    <div class="halal-seal">HALAL<br>QUALITY</div>
+
+    <div class="bottom-copy">
+      <p>© 2026 ARAV MEATGROUP</p>
+      <p>Premium Supplier • European Distribution</p>
+    </div>
   </div>
-</footer>
+</section>
 
 <a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">💬</a>
 
