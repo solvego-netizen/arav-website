@@ -282,6 +282,102 @@ h2{
 
   </div>
 </section>
+  .products{
+  padding:90px 70px;
+  background:#f7f4ef;
+}
+
+.products-head{
+  max-width:760px;
+  margin-bottom:45px;
+}
+
+.products-head span{
+  color:#7A0000;
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.products-head h2{
+  font-size:42px;
+  margin:14px 0;
+}
+
+.products-head p{
+  font-size:18px;
+  color:#555;
+  line-height:1.6;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+.product-card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+}
+
+.product-img{
+  height:210px;
+  background-size:cover;
+  background-position:center;
+}
+
+.product-content{
+  padding:28px;
+}
+
+.product-content h3{
+  color:#7A0000;
+  font-size:26px;
+  margin:0 0 12px;
+}
+
+.product-content p{
+  color:#555;
+  line-height:1.6;
+}
+
+.product-content a{
+  color:#7A0000;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.dark-card{
+  background:linear-gradient(140deg,#111,#3b0505);
+  color:white;
+  justify-content:center;
+}
+
+.dark-card .product-content h3,
+.dark-card .product-content a{
+  color:#D4AF37;
+}
+
+.dark-card .product-content p,
+.dark-card .product-content span{
+  color:#ddd;
+}
+
+@media(max-width:1000px){
+  .products{
+    padding:60px 24px;
+  }
+
+  .products-grid{
+    grid-template-columns:1fr;
+  }
+}
 /* PROCESS */
 .process-grid{
   display:grid;
