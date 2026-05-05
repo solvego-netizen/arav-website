@@ -8,7 +8,10 @@
 <style>
 :root{
   --red:#7A0000;
+  --red-dark:#4B0000;
   --gold:#D4AF37;
+  --cream:#F8F3EA;
+  --grey:#666;
 }
 
 *{box-sizing:border-box}
@@ -19,81 +22,95 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 60px;
+  padding:25px 60px;
   border-bottom:1px solid #eee;
 }
-header img{width:180px}
 
-/* HERO FIXED */
+.logo img{width:200px}
+
+/* HERO (FIXED FOTO) */
 .hero{
-  position:relative;
-  height:85vh;
-  display:flex;
-  align-items:center;
-  padding:0 80px;
-  color:white;
+  padding:90px 60px;
+  background:linear-gradient(120deg,#fff,var(--cream));
+}
 
-  background-image:url("https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=1600&q=80");
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:20px;
+  color:#444;
+}
+
+.hero-image{
+  min-height:420px;
+  border-radius:30px;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1400&q=80");
   background-size:cover;
   background-position:center;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:700px;
-}
-
-.hero h1{font-size:48px;margin:0 0 20px}
-.hero p{color:#ddd;font-size:18px}
-
+/* BUTTON */
 .btn{
-  display:inline-block;
   background:var(--red);
   color:white;
-  padding:14px 25px;
+  padding:15px 25px;
   border-radius:10px;
   text-decoration:none;
+  display:inline-block;
   margin-top:20px;
 }
 
 /* PRODUCTS */
-.products{padding:80px;background:#f7f7f7}
+.products{
+  padding:80px 60px;
+  background:#f9f9f9;
+}
+
 .products-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:30px;
+  gap:25px;
 }
 
 .product{
-  display:flex;
   background:white;
   border-radius:20px;
   overflow:hidden;
+  display:flex;
 }
 
 .product-img{
   width:45%;
   background-size:cover;
   background-position:center;
-  min-height:250px;
+  min-height:220px;
 }
 
-.product-info{padding:25px}
-.product-info h3{color:var(--red)}
+.product-info{
+  padding:25px;
+}
+
+.product-info h3{
+  color:var(--red);
+}
 
 /* WHY */
 .why{
   background:#111;
   color:white;
-  padding:80px;
+  padding:80px 60px;
 }
 
 .why-grid{
@@ -109,12 +126,16 @@ header img{width:180px}
 }
 
 /* SUPPLIERS */
-.suppliers{padding:80px}
+.suppliers{
+  padding:80px 60px;
+}
+
 .supplier-box{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
+
 .supplier-box div{
   background:#fafafa;
   padding:25px;
@@ -125,16 +146,18 @@ header img{width:180px}
 .contact{
   background:#111;
   color:white;
-  padding:80px;
+  padding:80px 60px;
 }
+
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
+
 .box{
   background:#1b1b1b;
-  padding:20px;
+  padding:25px;
   border-radius:20px;
 }
 
@@ -144,6 +167,7 @@ footer{
   color:white;
   padding:60px;
 }
+
 .footer-stamp{
   width:120px;
   height:120px;
@@ -153,16 +177,17 @@ footer{
   justify-content:center;
   margin-bottom:20px;
 }
+
 .footer-stamp img{width:70%}
 
 .halal-seal{
   border:2px solid var(--gold);
   border-radius:50%;
-  padding:20px;
+  padding:15px;
   display:inline-block;
 }
 
-/* WHATSAPP */
+/* WHATSAPP BUTTON */
 .whatsapp{
   position:fixed;
   right:20px;
@@ -181,6 +206,7 @@ footer{
 
 /* MOBILE */
 @media(max-width:900px){
+  .hero-grid,
   .products-grid,
   .why-grid,
   .supplier-box,
@@ -188,9 +214,13 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .hero{
-    height:auto;
-    padding:40px;
+  .product{
+    flex-direction:column;
+  }
+
+  .product-img{
+    width:100%;
+    height:200px;
   }
 }
 </style>
@@ -199,14 +229,20 @@ footer{
 <body>
 
 <header>
-  <img src="arav-logo.jpg">
+  <div class="logo">
+    <img src="arav-logo.jpg">
+  </div>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Betrouwbare levering van gevogelte en vlees</h1>
-    <p>Professionele B2B levering in Nederland, België en Duitsland.</p>
-    <a class="btn" href="#offerte">Vraag prijs</a>
+  <div class="hero-grid">
+    <div>
+      <h1>Premium gevogelte en vlees voor horeca en groothandel</h1>
+      <p>Betrouwbare levering in Nederland, België en Duitsland.</p>
+      <a class="btn" href="#offerte">Vraag prijs</a>
+    </div>
+
+    <div class="hero-image"></div>
   </div>
 </section>
 
