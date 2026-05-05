@@ -628,17 +628,12 @@ input,select,textarea{
 }
 
 /* MOBILE */
-@media(max-width:1000px){
+@media(max-width:900px){
   header{
     flex-direction:column;
     align-items:flex-start;
-    padding:22px;
-  }
-
-  .menu-area{
-    margin-top:20px;
-    flex-direction:column;
-    align-items:flex-start;
+    padding:20px;
+    gap:18px;
   }
 
   nav{
@@ -646,9 +641,11 @@ input,select,textarea{
     border-radius:18px;
   }
 
-  .logo-area img{
-    width:180px;
+  .logo-area img,
+  .header-left img{
+    width:175px;
   }
+}
 
   .hero,section{
     padding:60px 24px;
