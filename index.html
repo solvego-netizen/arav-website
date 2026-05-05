@@ -15,9 +15,10 @@ header{display:flex;justify-content:space-between;align-items:center;padding:24p
 .logo-area{display:flex;align-items:center;gap:20px}
 .logo-area img{width:210px;background:white;padding:8px;border-radius:14px}
 .brand-line{border-left:3px solid var(--gold);padding-left:16px}
-.brand-line .main{font-size:24px;font-weight:900}
-.brand-line .main span{color:var(--gold)}
-.brand-line .sub{color:#f0d98a;font-size:13px;margin-top:4px}
+.brand-line .main{font-size:24px;font-weight:900;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.gold{color:var(--gold)}
+.white{color:white}
+.brand-line .sub{font-size:13px;margin-top:4px;color:#f0d98a;letter-spacing:.5px}
 .menu-area{display:flex;align-items:center;gap:15px}
 nav{display:flex;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:8px;border-radius:50px}
 nav a{color:white;text-decoration:none;font-weight:800;font-size:14px;padding:10px 15px;border-radius:40px}
@@ -124,7 +125,7 @@ nav{flex-wrap:wrap;border-radius:18px}
   <div class="logo-area">
     <img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
     <div class="brand-line">
-      <div class="main"><span>ARAV</span> MEATGROUP</div>
+      <div class="main"><span class="gold">ARAV</span> <span class="white">MEATGROUP</span></div>
       <div class="sub">Fresh Quality & Trust</div>
     </div>
   </div>
