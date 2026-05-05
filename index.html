@@ -11,24 +11,72 @@
   --red-dark:#4B0000;
   --gold:#D4AF37;
   --cream:#F8F3EA;
-  --grey:#666;
 }
 
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial}
+body{margin:0;font-family:Arial, Helvetica, sans-serif;color:#111}
 
-/* HEADER */
+/* HEADER PREMIUM */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:25px 60px;
+  padding:22px 60px;
   border-bottom:1px solid #eee;
+  background:white;
 }
 
-.logo img{width:200px}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
 
-/* HERO (FIXED FOTO) */
+.header-left img{
+  width:190px;
+}
+
+.brand-text{
+  border-left:3px solid var(--gold);
+  padding-left:16px;
+  display:flex;
+  flex-direction:column;
+}
+
+.brand-text strong{
+  color:var(--red);
+  font-size:22px;
+}
+
+.brand-text span{
+  color:#666;
+  font-size:14px;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  background:#fafafa;
+  border:1px solid #eee;
+  padding:8px;
+  border-radius:50px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#111;
+  font-weight:800;
+  font-size:14px;
+  padding:11px 18px;
+  border-radius:40px;
+}
+
+nav a:hover{
+  background:var(--red);
+  color:white;
+}
+
+/* HERO */
 .hero{
   padding:90px 60px;
   background:linear-gradient(120deg,#fff,var(--cream));
@@ -43,7 +91,7 @@ header{
 
 .hero h1{
   font-size:48px;
-  margin-bottom:20px;
+  margin:0 0 20px;
 }
 
 .hero p{
@@ -61,7 +109,6 @@ header{
   background-position:center;
 }
 
-/* BUTTON */
 .btn{
   background:var(--red);
   color:white;
@@ -70,6 +117,9 @@ header{
   text-decoration:none;
   display:inline-block;
   margin-top:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
 }
 
 /* PRODUCTS */
@@ -89,6 +139,7 @@ header{
   border-radius:20px;
   overflow:hidden;
   display:flex;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .product-img{
@@ -142,6 +193,20 @@ header{
   border-radius:20px;
 }
 
+/* OFFERTE */
+#offerte{
+  padding:80px 60px;
+  background:#f9f9f9;
+}
+
+form input{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  width:100%;
+  max-width:450px;
+}
+
 /* CONTACT */
 .contact{
   background:#111;
@@ -161,33 +226,97 @@ header{
   border-radius:20px;
 }
 
-/* FOOTER */
-footer{
+/* FOOTER PREMIUM */
+.footer-premium{
   background:#070707;
   color:white;
-  padding:60px;
+  padding:70px 60px 30px;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  border-bottom:1px solid #222;
+  padding-bottom:50px;
+  margin-bottom:30px;
+}
+
+.footer-brand{
+  display:flex;
+  gap:30px;
+  align-items:flex-start;
 }
 
 .footer-stamp{
   width:120px;
   height:120px;
-  border:4px solid var(--gold);
+  border:3px solid var(--gold);
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:20px;
+  background:white;
+  flex-shrink:0;
 }
 
-.footer-stamp img{width:70%}
+.footer-stamp img{
+  width:70%;
+}
+
+.footer-text h3{
+  color:var(--gold);
+  margin:0 0 10px;
+}
+
+.footer-text p{
+  color:#bbb;
+  line-height:1.6;
+  max-width:400px;
+}
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+}
+
+.footer-links h4{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.footer-links p{
+  color:#bbb;
+  margin:6px 0;
+}
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  color:#777;
+  font-size:13px;
+}
 
 .halal-seal{
   border:2px solid var(--gold);
   border-radius:50%;
-  padding:15px;
-  display:inline-block;
+  width:100px;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:bold;
+  color:var(--gold);
+  flex-shrink:0;
 }
 
-/* WHATSAPP BUTTON */
+.halal-seal span{
+  font-size:11px;
+  color:#aaa;
+}
+
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   right:20px;
@@ -206,11 +335,23 @@ footer{
 
 /* MOBILE */
 @media(max-width:900px){
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    border-radius:18px;
+  }
+
   .hero-grid,
   .products-grid,
   .why-grid,
   .supplier-box,
-  .contact-grid{
+  .contact-grid,
+  .footer-top{
     grid-template-columns:1fr;
   }
 
@@ -222,6 +363,19 @@ footer{
     width:100%;
     height:200px;
   }
+
+  .footer-links{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-brand{
+    flex-direction:column;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+  }
 }
 </style>
 </head>
@@ -229,9 +383,19 @@ footer{
 <body>
 
 <header>
-  <div class="logo">
-    <img src="arav-logo.jpg">
+  <div class="header-left">
+    <img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
+    <div class="brand-text">
+      <strong>ARAV MEATGROUP</strong>
+      <span>Fresh Quality & Trust</span>
+    </div>
   </div>
+
+  <nav>
+    <a href="#producten">Producten</a>
+    <a href="#offerte">Offerte</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -241,18 +405,16 @@ footer{
       <p>Betrouwbare levering in Nederland, België en Duitsland.</p>
       <a class="btn" href="#offerte">Vraag prijs</a>
     </div>
-
     <div class="hero-image"></div>
   </div>
 </section>
 
-<section class="products">
+<section id="producten" class="products">
   <h2>Ons assortiment</h2>
 
   <div class="products-grid">
-
     <div class="product">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d')"></div>
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80')"></div>
       <div class="product-info">
         <h3>Kip</h3>
         <p>Kippendijen en filet voor horeca en groothandel.</p>
@@ -260,13 +422,12 @@ footer{
     </div>
 
     <div class="product">
-      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976')"></div>
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=900&q=80')"></div>
       <div class="product-info">
         <h3>Kalkoen</h3>
         <p>Kalkoenproducten voor bulk levering.</p>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -282,12 +443,21 @@ footer{
 </section>
 
 <section class="suppliers">
-  <h2>Partner worden</h2>
+  <h2>Leverancier of partner worden?</h2>
 
   <div class="supplier-box">
-    <div>Leveranciers welkom</div>
-    <div>Logistieke partners</div>
-    <div>info@aravmeat.com</div>
+    <div>
+      <h3>Leveranciers welkom</h3>
+      <p>Stuur uw aanbod, specificaties en volumes naar ons toe.</p>
+    </div>
+    <div>
+      <h3>Logistieke partners</h3>
+      <p>Samenwerking mogelijk voor opslag, transport en distributie.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>info@aravmeat.com</p>
+    </div>
   </div>
 </section>
 
@@ -295,32 +465,88 @@ footer{
   <h2>Offerte aanvragen</h2>
 
   <form action="https://formspree.io/f/xaqvoyjk" method="POST">
-    <input name="naam" placeholder="Naam"><br><br>
+    <input name="naam" placeholder="Naam" required><br><br>
+    <input name="bedrijf" placeholder="Bedrijf"><br><br>
+    <input name="product" placeholder="Product"><br><br>
     <button class="btn">Verstuur</button>
   </form>
 </section>
 
-<section class="contact">
+<section id="contact" class="contact">
   <h2>Contact</h2>
 
   <div class="contact-grid">
     <div class="box">+31 6 19 59 86 66</div>
-    <div class="box">NL / BE / DE</div>
-    <div class="box">Horeca / Retail</div>
+    <div class="box">Nederland / België / Duitsland</div>
+    <div class="box">Horeca / Retail / Groothandel</div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-stamp">
-    <img src="arav-logo.jpg">
+<footer class="footer-premium">
+
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <div class="footer-stamp">
+        <img src="arav-logo.jpg" alt="ARAV MEATGROUP">
+      </div>
+
+      <div class="footer-text">
+        <h3>ARAV MEATGROUP</h3>
+        <p>
+          Premium leverancier van gevogelte en vlees voor horeca, retail en groothandel.
+          Betrouwbare levering, duidelijke communicatie en scherpe B2B-prijzen.
+        </p>
+      </div>
+
+      <div class="halal-seal">
+        HALAL<br><span>QUALITY</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+
+      <div>
+        <h4>Bedrijf</h4>
+        <p>Over ons</p>
+        <p>Leveranciers</p>
+        <p>Contact</p>
+      </div>
+
+      <div>
+        <h4>Producten</h4>
+        <p>Kip</p>
+        <p>Kalkoen</p>
+        <p>Eend</p>
+        <p>Vlees</p>
+      </div>
+
+      <div>
+        <h4>Levering</h4>
+        <p>Nederland</p>
+        <p>België</p>
+        <p>Duitsland</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>+31 6 19 59 86 66</p>
+        <p>info@aravmeat.com</p>
+        <p>WhatsApp beschikbaar</p>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="halal-seal">HALAL</div>
+  <div class="footer-bottom">
+    <p>© 2026 ARAV MEATGROUP</p>
+    <p>Premium Supplier • European Distribution</p>
+  </div>
 
-  <p>© ARAV MEATGROUP</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/31619598666">💬</a>
+<a class="whatsapp" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20ik%20wil%20graag%20prijzen%20ontvangen." target="_blank">💬</a>
 
 </body>
 </html>
