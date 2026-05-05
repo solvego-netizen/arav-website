@@ -36,6 +36,25 @@ nav a:hover{color:var(--gold)}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .why-box{background:linear-gradient(140deg,#1b1b1b,#2a2a2a);padding:28px;border-radius:18px;border:1px solid #333}
 
+.suppliers{padding:90px 70px;background:#f7f4ef}
+.suppliers-head{max-width:850px;margin-bottom:40px}
+.suppliers-head span{color:var(--red);font-weight:900;letter-spacing:2px;font-size:13px}
+.suppliers-head h2{font-size:42px;margin:14px 0}
+.suppliers-head p{font-size:18px;color:#555;line-height:1.6}
+.supplier-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}
+.supplier-main{background:white;border-radius:24px;padding:35px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.supplier-main h3{color:var(--red);font-size:28px;margin-top:0}
+.supplier-main p{color:#555;line-height:1.6}
+.supplier-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}
+.supplier-check{background:#fafafa;border:1px solid #eee;border-radius:14px;padding:15px;font-weight:800}
+.supplier-side{display:grid;gap:20px}
+.supplier-box{background:linear-gradient(140deg,#111,#3b0505);color:white;border-radius:22px;padding:28px;box-shadow:0 15px 35px rgba(0,0,0,.18)}
+.supplier-box h3{color:var(--gold);margin-top:0}
+.supplier-box p{color:#ddd;line-height:1.6}
+.supplier-mini{background:white;border-radius:22px;padding:28px;box-shadow:0 15px 35px rgba(0,0,0,.08)}
+.supplier-mini h3{color:var(--red);margin-top:0}
+.supplier-mini p{color:#555;line-height:1.6}
+
 .bottom{background:var(--dark);color:white}
 .bottom-top{display:grid;grid-template-columns:2fr 1fr;gap:50px;padding:80px 70px;background:linear-gradient(120deg,#4B0000,#111)}
 .bottom-panels{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px;padding:70px}
@@ -45,10 +64,17 @@ nav a:hover{color:var(--gold)}
 .bottom-bar{display:grid;grid-template-columns:1fr auto 1fr;padding:30px 70px;border-top:1px solid #222}
 .footer-links a{color:#bbb;margin-right:15px;text-decoration:none}
 .halal{border:2px solid var(--gold);padding:12px;border-radius:50%;color:var(--gold);text-align:center;font-weight:900}
+.company-info{margin-top:15px;display:flex;flex-wrap:wrap;gap:10px}
+.company-info span{font-size:11px;color:#bbb;border:1px solid #333;padding:5px 8px;border-radius:6px;background:rgba(255,255,255,0.04)}
 .whatsapp{position:fixed;right:22px;bottom:22px;background:#25D366;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:28px;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.25);z-index:99}
 
 @media(max-width:1000px){
-  .hero,.products-grid,.why,.why-grid,.bottom-top,.bottom-panels,.bottom-bar{grid-template-columns:1fr}
+  header{padding:20px 24px;flex-direction:column;align-items:flex-start;gap:15px}
+  nav a{margin-left:0;margin-right:14px}
+  .hero,.products-grid,.why,.why-grid,.supplier-layout,.supplier-checks,.bottom-top,.bottom-panels,.bottom-bar{grid-template-columns:1fr}
+  .hero{padding:70px 24px}
+  .products,.why,.suppliers{padding:70px 24px}
+  .bottom-top,.bottom-panels,.bottom-bar{padding:50px 24px}
 }
 </style>
 </head>
@@ -59,6 +85,7 @@ nav a:hover{color:var(--gold)}
   <div>ARAV MEATGROUP</div>
   <nav>
     <a href="#producten">Producten</a>
+    <a href="#leveranciers">Leveranciers</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -130,6 +157,45 @@ nav a:hover{color:var(--gold)}
   </div>
 </section>
 
+<section id="leveranciers" class="suppliers">
+  <div class="suppliers-head">
+    <span>SUPPLY & PARTNERS</span>
+    <h2>Leverancier of partner worden?</h2>
+    <p>ARAV MEATGROUP zoekt betrouwbare leveranciers en partners voor gevogelte, vlees, opslag, transport en internationale handel.</p>
+  </div>
+
+  <div class="supplier-layout">
+    <div class="supplier-main">
+      <h3>Stuur ons uw aanbod</h3>
+      <p>
+        Levert u kip, kalkoen, eend of vleesproducten? Stuur ons uw productspecificaties, volumes,
+        certificeringen, prijzen en levercondities. Wij kijken graag naar een structurele samenwerking.
+      </p>
+
+      <div class="supplier-checks">
+        <div class="supplier-check">Productspecificaties</div>
+        <div class="supplier-check">Beschikbare volumes</div>
+        <div class="supplier-check">Certificeringen</div>
+        <div class="supplier-check">EXW / DAP / levercondities</div>
+      </div>
+
+      <a class="btn" href="https://wa.me/31619598666?text=Hallo%20ARAV%20MEATGROUP,%20wij%20willen%20ons%20aanbod%20als%20leverancier%20bespreken." target="_blank">Aanbod bespreken via WhatsApp</a>
+    </div>
+
+    <div class="supplier-side">
+      <div class="supplier-box">
+        <h3>Voor leveranciers</h3>
+        <p>Wij zoeken betrouwbare partijen met constante kwaliteit, duidelijke documentatie en concurrerende B2B-prijzen.</p>
+      </div>
+
+      <div class="supplier-mini">
+        <h3>Voor logistieke partners</h3>
+        <p>Transport, gekoelde opslag, cross-dock en distributie in Nederland, België en Duitsland.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="bottom">
   <div class="bottom-top">
     <div>
@@ -147,6 +213,11 @@ nav a:hover{color:var(--gold)}
       <div>
         <h3>ARAV MEATGROUP</h3>
         <p>Premium leverancier van vlees en gevogelte voor professionele afnemers.</p>
+        <div class="company-info">
+          <span>KVK: 97140082</span>
+          <span>BTW: NL867926284B01</span>
+          <span>IBAN: NL46 RABO 0124519679</span>
+        </div>
       </div>
     </div>
 
@@ -164,6 +235,7 @@ nav a:hover{color:var(--gold)}
   <div class="bottom-bar">
     <div class="footer-links">
       <a href="#producten">Producten</a>
+      <a href="#leveranciers">Leveranciers</a>
       <a href="#contact">Contact</a>
     </div>
 
