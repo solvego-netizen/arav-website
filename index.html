@@ -232,55 +232,56 @@ h2{
 }
 
 /* PRODUCTS */
-.products{
-  background:#f9f9f9;
-}
+<section id="producten" class="products">
+  <div class="products-head">
+    <span>ONS ASSORTIMENT</span>
+    <h2>Gevogelte en vlees voor professionele afnemers</h2>
+    <p>
+      Wij leveren aan horeca, retail, toko’s, supermarkten en groothandel.
+      Producten zijn beschikbaar op aanvraag, afhankelijk van volume en specificatie.
+    </p>
+  </div>
 
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-}
+  <div class="products-grid">
 
-.product{
-  background:white;
-  border:1px solid #eee;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 8px 25px rgba(0,0,0,.04);
-  transition:.25s;
-}
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80');"></div>
+      <div class="product-content">
+        <h3>Kip</h3>
+        <p>Kippendijen, kipfilet en overige kipproducten voor B2B klanten.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kip" target="_blank">Vraag prijs →</a>
+      </div>
+    </div>
 
-.product:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 45px rgba(0,0,0,.10);
-}
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=900&q=80');"></div>
+      <div class="product-content">
+        <h3>Kalkoen</h3>
+        <p>Kalkoenvlees en kalkoenproducten voor groothandel en foodservice.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20kalkoen" target="_blank">Vraag prijs →</a>
+      </div>
+    </div>
 
-.product-img{
-  height:190px;
-  background-size:contain;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-color:white;
-  border-bottom:1px solid #eee;
-}
+    <div class="product-card">
+      <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=900&q=80');"></div>
+      <div class="product-content">
+        <h3>Eend</h3>
+        <p>Eendproducten voor horeca, speciaalzaken en professionele klanten.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20eend" target="_blank">Vraag prijs →</a>
+      </div>
+    </div>
 
-.product-content{
-  padding:28px;
-}
+    <div class="product-card dark-card">
+      <div class="product-content">
+        <span>OP AANVRAAG</span>
+        <h3>Vlees</h3>
+        <p>Vleesproducten op aanvraag, afgestemd op volume, specificatie en leverlocatie.</p>
+        <a href="https://wa.me/31619598666?text=Ik%20wil%20prijzen%20voor%20vlees" target="_blank">Bespreek mogelijkheden →</a>
+      </div>
+    </div>
 
-.product h3{
-  color:var(--red);
-  font-size:25px;
-  margin-top:0;
-}
-
-.product a{
-  color:var(--red);
-  font-weight:bold;
-  text-decoration:none;
-}
-
+  </div>
+</section>
 /* PROCESS */
 .process-grid{
   display:grid;
