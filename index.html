@@ -37,8 +37,6 @@ header{
   color:white;
   border-bottom:3px solid var(--gold);
   box-shadow:0 12px 35px rgba(0,0,0,.25);
-  position:relative;
-  z-index:10;
 }
 
 .logo-area{
@@ -52,7 +50,6 @@ header{
   background:white;
   padding:8px;
   border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 .brand-line{
@@ -60,14 +57,12 @@ header{
   padding-left:16px;
 }
 
-/* 1 kleur */
 .logo-text-one{
   color:var(--gold);
   font-size:24px;
   font-weight:900;
   letter-spacing:1px;
   text-transform:uppercase;
-  text-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 
 .brand-tagline{
@@ -89,7 +84,6 @@ nav{
   border:1px solid rgba(255,255,255,.18);
   padding:8px;
   border-radius:50px;
-  backdrop-filter:blur(8px);
 }
 
 nav a{
@@ -146,7 +140,6 @@ nav a:hover{
   font-size:58px;
   line-height:1.03;
   margin:0 0 22px;
-  letter-spacing:-1.5px;
 }
 
 .hero p{
@@ -190,11 +183,12 @@ nav a:hover{
   padding:13px 18px;
   border-radius:14px;
   font-weight:900;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 /* GENERAL */
-section{padding:90px 80px}
+section{
+  padding:90px 80px;
+}
 
 h2{
   font-size:44px;
@@ -329,56 +323,6 @@ h2{
   color:#ccc;
 }
 
-/* PROCESS */
-.process-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-}
-
-.interactive-card{
-  background:
-    radial-gradient(circle at top right,rgba(198,146,20,.22),transparent 35%),
-    linear-gradient(140deg,#111,#2a1515);
-  color:white;
-  border-radius:30px;
-  padding:40px;
-}
-
-.country-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin:25px 0;
-}
-
-.country-buttons button{
-  background:white;
-  color:#111;
-  border:none;
-  padding:14px 18px;
-  border-radius:50px;
-  font-weight:900;
-}
-
-.country-info{
-  background:rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:22px;
-}
-
-.steps{
-  display:grid;
-  gap:18px;
-}
-
-.step{
-  border-left:4px solid var(--gold);
-  background:#fafafa;
-  padding:24px;
-  border-radius:18px;
-}
-
 /* SUPPLIERS */
 .supplier-layout{
   display:grid;
@@ -394,64 +338,11 @@ h2{
   padding:32px;
 }
 
-.supplier-checks{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:20px;
-}
-
-.supplier-checks div{
-  background:white;
-  border:1px solid #eee;
-  border-radius:12px;
-  padding:14px;
-  font-weight:800;
-}
-
-/* QUOTE */
-.quote{
-  background:#f9f9f9;
-}
-
-.quote-form{
-  max-width:850px;
-  background:white;
-  border:1px solid #eee;
-  border-radius:26px;
-  padding:38px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-}
-
-.form-group.full{
-  grid-column:1/-1;
-}
-
-label{
-  font-weight:900;
-  margin-bottom:8px;
-}
-
-input,select,textarea{
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:10px;
-}
-
 /* FOOTER */
 .bottom{
   background:#111;
   color:white;
+  padding:0;
 }
 
 .bottom-top{
@@ -578,10 +469,7 @@ section{
 .products-grid,
 .why-layout,
 .why-grid,
-.process-grid,
 .supplier-layout,
-.supplier-checks,
-.form-grid,
 .bottom-top,
 .bottom-panels,
 .bottom-bar{
@@ -612,10 +500,13 @@ section{
 <body>
 
 <header>
+
   <div class="logo-area">
-    <img src="arav-logo.jpg" alt="ARAV MEATGROUP logo">
+
+    <img src="arav-logo.jpg" alt="ARAV MEATGROUP">
 
     <div class="brand-line">
+
       <div class="logo-text-one">
         ARAV MEATGROUP
       </div>
@@ -623,27 +514,34 @@ section{
       <div class="brand-tagline">
         Fresh Quality & Trust
       </div>
+
     </div>
+
   </div>
 
   <div class="menu-area">
+
     <nav>
       <a href="#over">Over ons</a>
       <a href="#producten">Producten</a>
-      <a href="#proces">Werkwijze</a>
       <a href="#leveranciers">Leveranciers</a>
-      <a href="#offerte">Offerte</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="lang">🇳🇱 🇬🇧 🇩🇪 🇫🇷</div>
+    <div class="lang">
+      🇳🇱 🇬🇧 🇩🇪 🇫🇷
+    </div>
+
   </div>
+
 </header>
 
 <section class="hero">
+
   <div class="hero-grid">
 
     <div>
+
       <div class="label">
         KWALITEIT • FLEXIBILITEIT • BETROUWBAAR
       </div>
@@ -670,11 +568,13 @@ section{
         <div>Vers & diepvries</div>
         <div>Flexibele volumes</div>
       </div>
+
     </div>
 
     <div class="hero-image"></div>
 
   </div>
+
 </section>
 
 <section id="over">
@@ -689,6 +589,7 @@ section{
   <div class="about-grid">
 
     <div class="about-box">
+
       <h3>Onze focus</h3>
 
       <p>
@@ -705,6 +606,7 @@ section{
         ARAV MEATGROUP werkt met duidelijke communicatie
         en denkt actief mee met klanten en partners.
       </p>
+
     </div>
 
     <div class="about-box">
@@ -746,14 +648,7 @@ section{
 
       <div class="product-content">
         <h3>Kip</h3>
-
-        <p>
-          Kippendijen, filet en andere kipproducten.
-        </p>
-
-        <a href="https://wa.me/31619598666" target="_blank">
-          Vraag kipprijzen →
-        </a>
+        <p>Kippendijen, filet en andere kipproducten.</p>
       </div>
     </div>
 
@@ -763,15 +658,7 @@ section{
 
       <div class="product-content">
         <h3>Kalkoen</h3>
-
-        <p>
-          Kalkoenproducten voor zowel zakelijke
-          als particuliere klanten.
-        </p>
-
-        <a href="https://wa.me/31619598666" target="_blank">
-          Vraag kalkoenprijzen →
-        </a>
+        <p>Kalkoenproducten voor zakelijke en particuliere klanten.</p>
       </div>
     </div>
 
@@ -781,15 +668,7 @@ section{
 
       <div class="product-content">
         <h3>Eend</h3>
-
-        <p>
-          Eendproducten voor horeca,
-          speciaalzaken en particulieren.
-        </p>
-
-        <a href="https://wa.me/31619598666" target="_blank">
-          Vraag eendprijzen →
-        </a>
+        <p>Eendproducten voor horeca, speciaalzaken en particulieren.</p>
       </div>
     </div>
 
@@ -797,7 +676,6 @@ section{
 
       <div class="product-content">
         <span>OP AANVRAAG</span>
-
         <h3>Vlees</h3>
 
         <p>
@@ -805,9 +683,6 @@ section{
           volume en wensen van de klant.
         </p>
 
-        <a href="https://wa.me/31619598666" target="_blank">
-          Bespreek aanbod →
-        </a>
       </div>
 
     </div>
@@ -835,10 +710,6 @@ section{
         betrouwbare levering en langdurige samenwerking
         met zowel zakelijke als particuliere klanten.
       </p>
-
-      <a class="btn" href="#offerte">
-        Start aanvraag
-      </a>
 
     </div>
 
@@ -869,6 +740,144 @@ section{
   </div>
 
 </section>
+
+<section id="leveranciers">
+
+  <h2>Leverancier of partner worden?</h2>
+
+  <div class="supplier-layout">
+
+    <div class="supplier-main">
+
+      <h3>Stuur ons uw aanbod</h3>
+
+      <p>
+        Wij zoeken betrouwbare leveranciers
+        en partners voor vlees en gevogelte.
+      </p>
+
+    </div>
+
+    <div class="supplier-card">
+
+      <h3>Logistiek</h3>
+
+      <p>
+        Partners voor transport,
+        distributie en opslag welkom.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact" class="bottom">
+
+  <div class="bottom-top">
+
+    <div>
+
+      <h2>
+        Klaar om prijzen of samenwerking te bespreken?
+      </h2>
+
+      <p>
+        Neem contact met ons op voor prijzen,
+        beschikbaarheid en levermogelijkheden.
+      </p>
+
+    </div>
+
+    <div>
+
+      <a class="btn"
+      href="https://wa.me/31619598666"
+      target="_blank">
+        WhatsApp direct
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-panels">
+
+    <div class="panel main">
+
+      <img src="arav-logo.jpg" alt="ARAV MEATGROUP">
+
+      <div>
+
+        <h3>ARAV MEATGROUP</h3>
+
+        <p>
+          Leverancier van gevogelte en vleesproducten
+          voor horeca, retail, groothandel én particulieren.
+        </p>
+
+        <div class="company-info">
+          <span>KVK: 97140082</span>
+          <span>BTW: NL867926284B01</span>
+          <span>IBAN: NL46 RABO 0124519679</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel">
+
+      <h3>Producten</h3>
+
+      <p>
+        Kip<br>
+        Kalkoen<br>
+        Eend<br>
+        Vleesproducten
+      </p>
+
+    </div>
+
+    <div class="panel">
+
+      <h3>Contact</h3>
+
+      <p>
+        info@aravmeat.com<br>
+        +31 6 19 59 86 66
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-bar">
+
+    <div class="footer-links">
+      <a href="#over">Over ons</a>
+      <a href="#producten">Producten</a>
+      <a href="#leveranciers">Leveranciers</a>
+    </div>
+
+    <div class="halal">
+      HALAL
+    </div>
+
+    <div class="copy">
+      © 2026 ARAV MEATGROUP
+    </div>
+
+  </div>
+
+</section>
+
+<a class="whatsapp"
+href="https://wa.me/31619598666"
+target="_blank">
+💬
+</a>
 
 </body>
 </html>
