@@ -11,7 +11,6 @@
   --darkred:#4B0000;
   --gold:#C69214;
   --cream:#F8F3EA;
-  --black:#0B0B0B;
   --soft:#F7F4EF;
 }
 
@@ -25,6 +24,7 @@ body{
   background:white;
 }
 
+/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -99,14 +99,7 @@ nav a:hover{
   color:#3a0000;
 }
 
-.lang{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.18);
-  padding:8px 11px;
-  border-radius:50px;
-  font-size:19px;
-}
-
+/* HERO */
 .hero{
   padding:95px 80px;
   background:
@@ -185,6 +178,7 @@ nav a:hover{
   font-weight:900;
 }
 
+/* GENERAL */
 section{
   padding:90px 80px;
 }
@@ -202,6 +196,7 @@ h2{
   margin-bottom:38px;
 }
 
+/* ABOUT */
 .about-grid{
   display:grid;
   grid-template-columns:1.2fr .8fr;
@@ -219,6 +214,7 @@ h2{
   color:var(--red);
 }
 
+/* PRODUCTS */
 .products{
   background:var(--soft);
 }
@@ -262,6 +258,7 @@ h2{
   color:white;
 }
 
+/* WHY */
 .why{
   background:#0e0e0e;
   color:white;
@@ -313,6 +310,7 @@ h2{
   color:#ccc;
 }
 
+/* SUPPLIERS */
 .supplier-layout{
   display:grid;
   grid-template-columns:1.15fr .85fr;
@@ -375,6 +373,7 @@ input,select,textarea{
   margin-top:15px;
 }
 
+/* FOOTER */
 .bottom{
   background:#111;
   color:white;
@@ -468,6 +467,7 @@ input,select,textarea{
   color:#777;
 }
 
+/* WHATSAPP */
 .whatsapp{
   position:fixed;
   right:22px;
@@ -484,6 +484,7 @@ input,select,textarea{
   text-decoration:none;
 }
 
+/* MOBILE */
 @media(max-width:1000px){
   header{
     flex-direction:column;
@@ -560,8 +561,6 @@ input,select,textarea{
       <a href="#offerte">Offerte</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <div class="lang">🇳🇱 🇬🇧 🇩🇪 🇫🇷</div>
   </div>
 </header>
 
